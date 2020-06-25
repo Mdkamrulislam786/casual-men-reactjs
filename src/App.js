@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+//COMPONENTS
+import Header from './Components/Header/header'
+import CMJumbotron from './Components/Header/Jumbotron/jumbotron'
+import Popularp from './Components/PProducts/Popularp'
+import DiscoverPS from './Components/DiscoverPS/DiscoverPS'
+import OurPP from './Components/OurPP/OurPP'
+import Footer from './Components/Footer/Footer'
 
-function App() {
+const App=()=> {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header/>
+      <CMJumbotron/>
+      <Popularp/>
+      <DiscoverPS/>
+      <OurPP/>
+      <Footer/>
+    </>
+  );  
 }
 
 export default App;
