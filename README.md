@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This is one of my first E-Commerce project created with React, react-bootstrap, redux and a few third pirty library like react-slick-slider etc.
 ## Available Scripts
 
 In the project directory, you can run:
