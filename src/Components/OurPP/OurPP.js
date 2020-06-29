@@ -1,22 +1,27 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import { Container, Card } from "react-bootstrap";
-import Buttons from "../widgets/Buttons/button";
+import { Container } from "react-bootstrap";
 import "./OurPP.css";
-import img from "../../assets/Shirts/A-unsplash.jpg";
+import FeatureCard from "../widgets/ShoppingCards/FeatureCard/FeatureCard";
+//Images
+import img from "../../assets/T-Shirts/S-unsplash.jpg";
+import img2 from "../../assets/Jeans/J-unsplash.jpg"
+import img3 from "../../assets/Shirts/ocean-shirt.jpg"
+import img4 from "../../assets/Shirts/L-unsplash.jpg"
+import img5 from "../../assets/Jeans/fashion.jpg"
+
 
 class OurPP extends Component {
   render() {
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToShow: 4,
+      slidesToScroll: 4,
       adaptiveHeight: true,
       autoplay: true,
-      speed: 5000,
-      autoplaySpeed: 3000,
-      cssEase: "linear",
+      speed: 3000,
+      autoplaySpeed: 3000
     };
 
     return (
@@ -28,91 +33,23 @@ class OurPP extends Component {
         </div>
         <Container>
           <Slider {...settings}>
-            <div>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={img} className="ppImage" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Text>
-                  <span>
-                      <Buttons cta="Add To Cart" /><span style={{marginLeft: '15px', fontSize:'24px'}} >9$</span>
-                  </span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={img} className="ppImage" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Text>
-                  <span>
-                      <Buttons cta="Add To Cart" /><span style={{marginLeft: '15px', fontSize:'24px'}} >9$</span>
-                  </span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={img} className="ppImage" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Text>
-                  <span>
-                      <Buttons cta="Add To Cart" /><span style={{marginLeft: '15px', fontSize:'24px'}} >9$</span>
-                  </span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={img} className="ppImage" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Text>
-                  <span>
-                      <Buttons cta="Add To Cart" /><span style={{marginLeft: '15px', fontSize:'24px'}} >9$</span>
-                  </span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-            <div>
-              <Card style={{ width: "18rem" }}>
-                <Card.Img variant="top" src={img} className="ppImage" />
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Text>
-                  <span>
-                      <Buttons cta="Add To Cart" /><span style={{marginLeft: '15px', fontSize:'24px'}} >9$</span>
-                  </span>
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
+            
+              <div>
+                <FeatureCard image={img} title="Sleev less T-Shirt" price="10$" />
+              </div>
+              <div>
+                <FeatureCard image={img2} title="Grey Gaverting Formal Pants" price="19.50$" />
+              </div>
+              <div>
+                <FeatureCard image={img3} title="Beach Light" price="25.50$" />
+              </div>
+              <div>
+                <FeatureCard image={img4} title="Official Formal Long Sleeve" price="10$" />
+              </div>
+              <div>
+                <FeatureCard image={img5} title="Stechy Blue Jeans" price="10$" />
+              </div>
+           
           </Slider>
         </Container>
       </div>

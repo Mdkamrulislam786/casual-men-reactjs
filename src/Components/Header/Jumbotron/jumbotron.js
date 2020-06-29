@@ -18,8 +18,8 @@ class CMJumbotron extends Component {
             <h1>COMFORT COLLECTION</h1>
             <p>Shop soft, Wrinkle Free, lightweight options at home comfort</p>
             <p>
-              <Buttons cta="SHOP NOW" />
-              <Buttons cta="COLLECTIONS" />
+              <Buttons cta="SHOP NOW" linkTo="/online-shop&all-collections" />
+              <Buttons cta="COLLECTIONS" linkTo="/online-shop&all-collections" />
             </p>
           </Jumbotron>
         </div>

@@ -62,7 +62,7 @@ const Footer = () => {
           <Row>
             <div>
               {" "}
-              @Copywrite 2020 Casual Men Tearms & Condition | Privacy & Policy
+              @Copywrite 2020 Casual Men  | Terms & Condition | Privacy & Policy
             </div>
           </Row>
         </Container>

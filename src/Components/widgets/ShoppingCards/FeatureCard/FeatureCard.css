@@ -1,0 +1,22 @@
+.colors-circle span{
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    display: inline-block;
+    margin-right: 1rem;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+.colors-circle span:nth-child(1){
+    background-color: #000000;
+}
+.colors-circle span:nth-child(2){
+    background-color: #ffffff;
+}
+.colors-circle span:nth-child(3){
+    background-color: #bbb;
+}
+.ppImage {
+    width: 500px;
+    height: 400px;
+}
