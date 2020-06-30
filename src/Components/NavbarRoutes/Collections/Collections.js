@@ -1,8 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Tabs, Tab, Sonnet, Nav } from "react-bootstrap";
+import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import OurPP from '../../OurPP/OurPP'
-import TShirts from '../../NavbarRoutes/T-Shirts/TShirts'
+import TShirts from '../TShirts/TShirts'
 import './Collections.css'
+import Shirts from '../Shirts/Shirts'
+import Jeans from '../Jeans/Jeans'
 
 const Collections = () => {
   return (
@@ -13,19 +15,19 @@ const Collections = () => {
             <Col>
               <Nav variant="tabs"  className="d-flex flex-row justify-content-center text-center">
                 <Nav.Item>
-                  <Nav.Link eventKey="second">T-Shirts</Nav.Link>
+                  <Nav.Link eventKey="first">T-Shirts</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Nav.Link eventKey="second">Shirts</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Jeans & Pants</Nav.Link>
+                  <Nav.Link eventKey="third">Jeans & Pants</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="first">Most Popular</Nav.Link>
+                  <Nav.Link eventKey="fourth">Most Popular</Nav.Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Nav.Link eventKey="second">Trends</Nav.Link>
+                  <Nav.Link eventKey="fifth">Trends</Nav.Link>
                 </Nav.Item>
               </Nav>
             </Col>
@@ -34,10 +36,19 @@ const Collections = () => {
             <Col>
               <Tab.Content>
                 <Tab.Pane eventKey="first">
-                  <OurPP />
+                  <TShirts/>
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                <TShirts/>
+                <Shirts />
+                </Tab.Pane>
+                <Tab.Pane eventKey="third">
+                  <Jeans />
+                </Tab.Pane>
+                <Tab.Pane eventKey="fourth">
+                <OurPP />
+                </Tab.Pane>
+                <Tab.Pane eventKey="fifth">
+                  <OurPP />
                 </Tab.Pane>
               </Tab.Content>
             </Col>

@@ -4,7 +4,9 @@ import Layout from './Hoc/Layout/Layout'
 //COMPONENTS
 import Home from './Home'
 import Collections from './Components/NavbarRoutes/Collections/Collections'
-import TShirts from './Components/NavbarRoutes/T-Shirts/TShirts'
+import TShirts from './Components/NavbarRoutes/TShirts/TShirts'
+import Shirts from './Components/NavbarRoutes/Shirts/Shirts'
+import Jeans from './Components/NavbarRoutes/Jeans/Jeans'
 
 
 class Routes extends Component {
@@ -15,6 +17,8 @@ class Routes extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/T-Shirts" exact component={TShirts} />
           <Route path="/online-shop&all-collections" exact component={Collections} />
+          <Route path="/shirts" exact component={Shirts} />
+          <Route path="/jeans" exact component={Jeans} />
         </Switch>
       </Layout>
     );

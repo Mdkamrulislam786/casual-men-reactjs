@@ -11,18 +11,19 @@ import {
 } from "react-bootstrap";
 import "./navbar.css";
 
-
 const logo = () => (
-    <span style={{ fontSize: "24px", color: "#fff" }}>
-      <i className="fas fa-male"></i> CASUAL MEN
-    </span>
+  <span style={{ fontSize: "24px", color: "#fff" }}>
+    <i className="fas fa-male"></i> CASUAL MEN
+  </span>
 );
 
 const CMNavbar = () => {
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="lg" variant="dark">
-        <Navbar.Brand as={Link} to="/">{logo()}</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/">
+          {logo()}
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
           className="justify-content-center"
@@ -34,15 +35,10 @@ const CMNavbar = () => {
                 title={<i className="fas fa-tshirt">T-shirts</i>}
                 id="collasible-nav-dropdown"
               >
-                <NavDropdown.Item as={Link}
-                  to="/T-Shirts">
+                <NavDropdown.Item as={Link} to="/T-Shirts">
                   T-Shirts
                 </NavDropdown.Item>
-                <NavDropdown.Item   
-                href="#action/3.1"       
-                >
-                  Polo
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Polo</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">
                   Long Sleves
                 </NavDropdown.Item>
@@ -55,6 +51,7 @@ const CMNavbar = () => {
             </Nav.Item>
             <Nav.Item>
               <NavDropdown title="Shirts" id="collasible-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/shirts" >Shirts</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.1">
                   Short Sleves
                 </NavDropdown.Item>
@@ -62,12 +59,13 @@ const CMNavbar = () => {
                   Long Sleves
                 </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Formal</NavDropdown.Item>
-                <NavDropdown.Divider />
+                <NavDropdown.Item href="#action/3.4">Denim</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.4">Stylish</NavDropdown.Item>
               </NavDropdown>
             </Nav.Item>
             <Nav.Item>
               <NavDropdown title="Jeans" id="collasible-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/jeans">Jeans</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.1">Casual</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Denim</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">
@@ -77,7 +75,9 @@ const CMNavbar = () => {
             </Nav.Item>
             <Nav.Item>
               <NavDropdown title="Collections" id="collasible-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/online-shop&all-collections">All Collections</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/online-shop&all-collections">
+                  All Collections
+                </NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.1">Shirts</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Pants</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Trends</NavDropdown.Item>

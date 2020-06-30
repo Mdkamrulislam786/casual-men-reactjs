@@ -6,7 +6,7 @@ import './buttons.css'
 const Buttons = (props)=>{
     return(
         <>
-        <Button variant="none" as={Link} to={props.linkTo} className="CMButton"><p className="buttonp">{props.cta}</p></Button>
+        <Button variant="none" as={Link} to={props.linkTo} className="CMButton"><span className="buttonp">{props.cta}</span></Button>
         </>
     )
 }
