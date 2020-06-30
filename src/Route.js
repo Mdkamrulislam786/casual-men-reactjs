@@ -7,7 +7,8 @@ import Collections from './Components/NavbarRoutes/Collections/Collections'
 import TShirts from './Components/NavbarRoutes/TShirts/TShirts'
 import Shirts from './Components/NavbarRoutes/Shirts/Shirts'
 import Jeans from './Components/NavbarRoutes/Jeans/Jeans'
-
+import OurPP from './Components/OurPP/OurPP'
+import Polos from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Polos'
 
 class Routes extends Component {
   render() {
@@ -19,6 +20,8 @@ class Routes extends Component {
           <Route path="/online-shop&all-collections" exact component={Collections} />
           <Route path="/shirts" exact component={Shirts} />
           <Route path="/jeans" exact component={Jeans} />
+          <Route path="/Exclusive-Products" exact component={OurPP}/>
+          <Route path="/polos" exact component={Polos}/>
         </Switch>
       </Layout>
     );

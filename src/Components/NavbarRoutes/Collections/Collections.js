@@ -29,6 +29,9 @@ const Collections = () => {
                 <Nav.Item>
                   <Nav.Link eventKey="fifth">Trends</Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Nav.Link eventKey="sixth">Exclusive Products</Nav.Link>
+                </Nav.Item>
               </Nav>
             </Col>
             </Row>
@@ -48,6 +51,9 @@ const Collections = () => {
                 <OurPP />
                 </Tab.Pane>
                 <Tab.Pane eventKey="fifth">
+                  <OurPP />
+                </Tab.Pane>
+                <Tab.Pane eventKey="sixth">
                   <OurPP />
                 </Tab.Pane>
               </Tab.Content>

@@ -18,7 +18,7 @@ const Popularp = () => {
                     <br />
                     elit reprehenderit dolor officia consectetur
                   </p>
-                  <Buttons cta="Show Me"></Buttons>
+                  <Buttons cta="Show Me" linkTo="/T-Shirts"></Buttons>
                 </div>
               </div>
             </Col>
@@ -32,7 +32,7 @@ const Popularp = () => {
                     <br />
                     elit reprehenderit dolor officia consectetur
                   </p>
-                  <Buttons cta="Show Me"></Buttons>
+                  <Buttons cta="Show Me" linkTo="/jeans"></Buttons>
                 </div>
               </div>
             </Col>
@@ -49,7 +49,7 @@ const Popularp = () => {
                     <br />
                     elit reprehenderit dolor officia consectetur
                   </p>
-                  <Buttons cta="Show Me"></Buttons>
+                  <Buttons cta="Show Me" linkTo="/shirts"></Buttons>
                 </div>
               </div>
             </Col>
@@ -63,7 +63,7 @@ const Popularp = () => {
                     <br />
                     elit reprehenderit dolor officia consectetur
                   </p>
-                  <Buttons cta="Show Me"></Buttons>
+                  <Buttons cta="Show Me" linkTo="/online-shop&all-collections"></Buttons>
                 </div>
               </div>
             </Col>
