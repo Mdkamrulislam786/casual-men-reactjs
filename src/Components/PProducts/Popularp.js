@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./popularp.css";
 import Buttons from "../widgets/Buttons/button";
+
 const Popularp = () => {
   return (
     <div>
@@ -37,7 +38,11 @@ const Popularp = () => {
               </div>
             </Col>
           </Row>
-          <div className="middle"><Button size="lg" className="middle-btn" variant="danger">EXPLORE NOW</Button></div>
+          <div className="middle">
+            <Button size="lg" className="middle-btn" variant="danger">
+              EXPLORE NOW
+            </Button>
+          </div>
           <Row>
             <Col>
               <div className="popular popular3">
@@ -63,7 +68,10 @@ const Popularp = () => {
                     <br />
                     elit reprehenderit dolor officia consectetur
                   </p>
-                  <Buttons cta="Show Me" linkTo="/online-shop&all-collections"></Buttons>
+                  <Buttons
+                    cta="Show Me"
+                    linkTo="/online-shop&all-collections"
+                  ></Buttons>
                 </div>
               </div>
             </Col>

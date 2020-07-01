@@ -3,6 +3,7 @@ import { Container, Image } from "react-bootstrap";
 import FeatureCard from "../../../../widgets/ShoppingCards/FeatureCard/FeatureCard";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
+import AllDressHeader from '../../../../widgets/AllDressHeader/AllDressHeader'
 import "./Polos.css";
 
 //Images
@@ -34,30 +35,15 @@ class Polos extends Component {
     };
     return (
       <div className="AllTshirts">
-        <div className="AllTshirtsHaeder">
-          <Image src={PoloHeader} className="TShirtsHeaderImg  parallax" />
-          <div className="overlay"></div>
-          <div className="TshirtHeaderTextBlock">
-            <h1>POLO WILL NEVER GO OUT OF STYLE</h1>
-            <p>
-              Non incididunt eu duis qui enim deserunt sint qui et occaecat.
-              Ipsum occaecat dolor cillum amet sunt. Magna laboris cupidatat
-              aliquip culpa nostrud sint in qui eiusmod nisi ea deserunt. Aliqua
-              sunt deserunt{" "}
-            </p>
-          </div>
-        </div>
-        <div>
-          <h2
-            style={{
-              textAlign: "center",
-              marginBottom: "2rem",
-              marginTop: "2rem",
-            }}
-          >
-            CHOOSE YOUR FAVOURITE ONE NOW
-          </h2>
-        </div>
+       <AllDressHeader
+       Image={PoloHeader}
+       h1="POLO WILL NEVER GO OUT OF STYLE"
+       para="Non incididunt eu duis qui enim deserunt sint qui et occaecat. Ipsum
+       occaecat dolor cillum amet sunt. Magna laboris cupidatat aliquip
+       culpa nostrud sint in qui eiusmod nisi ea deserunt. Aliqua sunt
+       deserunt"
+       h2="CHOOSE YOUR FAVOURITE ONE NOW"
+       />
         <Container>
           <Slider {...settings}>
             <div>
@@ -65,35 +51,43 @@ class Polos extends Component {
                 to="/polos"
                 style={{ textDecoration: "none", color: "black" }}
               >
-                <FeatureCard image={img} title="Black" />
+                <FeatureCard image={img} title="Black" price="9$" />
               </Link>
             </div>
             <div>
-              <FeatureCard image={img2} title="RedBlack Polo" />
+              <FeatureCard image={img2} title="RedBlack Polo" price="17$" />
             </div>
             <div>
-              <FeatureCard image={img3} title="Light Short Sleeve" />
+              <FeatureCard
+                image={img3}
+                title="Light Short Sleeve"
+                price="20$"
+              />
             </div>
             <div>
-              <FeatureCard image={img4} title="Black/Slim Fit" />
+              <FeatureCard image={img4} title="Black/Slim Fit" price="30$" />
             </div>
             <div>
-              <FeatureCard image={img5} title="Green" />
+              <FeatureCard image={img5} title="Green" price="13$" />
             </div>
             <div>
-              <FeatureCard image={img6} title="Grey" />
+              <FeatureCard image={img6} title="Grey" price="12.50$" />
             </div>
             <div>
-              <FeatureCard image={img7} title="Dark Black" />
+              <FeatureCard image={img7} title="Dark Black" price="28$" />
             </div>
             <div>
-              <FeatureCard image={img8} title="Ash+Blue" />
+              <FeatureCard image={img8} title="Ash+Blue" price="10.77$" />
             </div>
             <div>
-              <FeatureCard image={img9} title="White" />
+              <FeatureCard image={img9} title="White" price="9$" />
             </div>
             <div>
-              <FeatureCard image={img3} title="Light Short Sleeve" />
+              <FeatureCard
+                image={img3}
+                title="Light Short Sleeve"
+                price="12.99$"
+              />
             </div>
           </Slider>
         </Container>

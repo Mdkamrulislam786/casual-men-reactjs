@@ -9,6 +9,10 @@ import Shirts from './Components/NavbarRoutes/Shirts/Shirts'
 import Jeans from './Components/NavbarRoutes/Jeans/Jeans'
 import OurPP from './Components/OurPP/OurPP'
 import Polos from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Polos'
+import LongSleeves from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Long-Sleeves/LongSleeves'
+import ShortSleeves from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/ShortSleeve/ShortSleeve'
+import Vneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Vneck/Vneck'
+import Cneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/CircleNeck/Cneck'
 
 class Routes extends Component {
   render() {
@@ -22,6 +26,10 @@ class Routes extends Component {
           <Route path="/jeans" exact component={Jeans} />
           <Route path="/Exclusive-Products" exact component={OurPP}/>
           <Route path="/polos" exact component={Polos}/>
+          <Route path="/LongSleeves" exact component={LongSleeves}/>
+          <Route path="/ShortSleeves" exact component={ShortSleeves}/>
+          <Route path="/Vneck" exact component={Vneck}/>
+          <Route path="/Circle-neck" exact component={Cneck}/>
         </Switch>
       </Layout>
     );

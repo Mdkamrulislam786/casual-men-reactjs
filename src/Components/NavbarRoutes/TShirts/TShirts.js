@@ -50,16 +50,36 @@ class TShirts extends Component {
               </Link>
             </div>
             <div>
-              <FeatureCard image={img2} title="Long Sleeves" />
+              <Link
+                to="/LongSleeves"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <FeatureCard image={img2} title="Long Sleeves" />
+              </Link>
             </div>
             <div>
-              <FeatureCard image={img3} title="Short Sleeve" />
+              <Link
+                to="/ShortSleeves"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <FeatureCard image={img3} title="Short Sleeve" />
+              </Link>
             </div>
             <div>
-              <FeatureCard image={img4} title="V-Neck" />
+              <Link
+                to="/Vneck"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <FeatureCard image={img4} title="V-Neck" />
+              </Link>
             </div>
             <div>
-              <FeatureCard image={img5} title="Circle Neck" />
+              <Link
+                to="/Circle-neck"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <FeatureCard image={img5} title="Circle Neck" />
+              </Link>
             </div>
           </Slider>
         </Container>
