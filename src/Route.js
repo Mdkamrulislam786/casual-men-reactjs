@@ -13,6 +13,7 @@ import LongSleeves from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Long
 import ShortSleeves from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/ShortSleeve/ShortSleeve'
 import Vneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Vneck/Vneck'
 import Cneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/CircleNeck/Cneck'
+import ProductCard from './Components/widgets/ShoppingCards/ProductCard/ProductCard'
 
 class Routes extends Component {
   render() {
@@ -30,6 +31,7 @@ class Routes extends Component {
           <Route path="/ShortSleeves" exact component={ShortSleeves}/>
           <Route path="/Vneck" exact component={Vneck}/>
           <Route path="/Circle-neck" exact component={Cneck}/>
+          <Route path="/ProductCard-add-to-cart" exact component={ProductCard}/>
         </Switch>
       </Layout>
     );

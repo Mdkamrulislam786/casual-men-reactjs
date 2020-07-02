@@ -10,7 +10,7 @@ const Collections = () => {
   return (
     <div className="Collections">
       <Container>
-        <Tab.Container id="left-tabs-example" defaultActiveKey="first">
+        <Tab.Container defaultActiveKey="first">
           <Row>
             <Col>
               <Nav   className="d-flex flex-row justify-content-center text-center">

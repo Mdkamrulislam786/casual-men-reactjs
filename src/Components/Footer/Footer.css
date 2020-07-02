@@ -14,12 +14,12 @@
     font-weight: 400;
 
 }
-ul {
+.footer ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
   }
-ul >li{
+.footer ul >li{
     text-decoration: none;
     font-size: 18px;
     font-weight: 400;

@@ -46,7 +46,7 @@ class Shirts extends Component {
         <Container>
           <Slider {...settings}>
             <div>
-              <FeatureCard image={img} title="Sky Blue" price="9$"/>
+              <FeatureCard image={img} title="Sky Blue" price="9$" linkTo="/ProductCard-add-to-cart"/>
             </div>
             <div>
               <FeatureCard image={img2} title="Beach Light" price="25.50$"/>
