@@ -27,7 +27,7 @@ const DiscoverPS = () => {
                         voluptate occaecat.loremDuis exercitation sit officia consectetur laborum
                         voluptate occaecat.
                       </p>
-                      <Buttons cta="Buy Now"></Buttons>
+                      <Buttons cta="Show Me" linkTo="/online-shop&all-collections"></Buttons>
                     </div>
                   </div>
                 </Col>
@@ -55,7 +55,7 @@ const DiscoverPS = () => {
                         loremDuis exercitation sit officia consectetur laborum
                         voluptate occaecat.
                       </p>
-                      <Buttons cta="Buy Now"></Buttons>
+                      <Buttons cta="Show Me" linkTo="/online-shop&all-collections"></Buttons>
                     </div>
                   </div>
                 </Col>

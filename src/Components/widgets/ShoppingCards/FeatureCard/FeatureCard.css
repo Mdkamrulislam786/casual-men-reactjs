@@ -16,7 +16,18 @@
 .colors-circle span:nth-child(3){
     background-color: #bbb;
 }
+.FeatureCard{
+    overflow: hidden;
+}
+.cardImg{
+    overflow: hidden;
+}
 .ppImage {
     max-width: 100%;
     height: 400px;
+    transition: transform .5s ease-in ;
+}
+.ppImage:hover{
+    cursor: zoom-in;
+    transform: scale(1.5);
 }

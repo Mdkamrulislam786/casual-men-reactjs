@@ -5,15 +5,18 @@ import './FeatureCard.css'
 
 const FeatureCard = (props) => {
     return (
-        <div className="d-block">
+        <div className="FeatureCard">
             <Card
                 style={{
                   width: "18rem",
                   paddingLeft: "20px",
-                  paddingRight: "20px"
+                  paddingRight: "20px",
+                  overflow:'hidden'
                 }}
               >
+                <div className="cardImg">
                 <Card.Img variant="top" src={props.image} className="ppImage" />
+                </div>
                 <Card.Body>
                   <div className="d-flex flex-column">
                     <div style={{paddingBottom:'10px'}} className="d-flex flex-row justify-content-between">

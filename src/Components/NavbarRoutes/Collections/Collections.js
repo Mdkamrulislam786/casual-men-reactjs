@@ -13,7 +13,7 @@ const Collections = () => {
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <Row>
             <Col>
-              <Nav variant="tabs"  className="d-flex flex-row justify-content-center text-center">
+              <Nav   className="d-flex flex-row justify-content-center text-center">
                 <Nav.Item>
                   <Nav.Link eventKey="first">T-Shirts</Nav.Link>
                 </Nav.Item>

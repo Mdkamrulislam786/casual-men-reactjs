@@ -11,6 +11,11 @@ import img2 from "../../../assets/Shirts/ocean-shirt.jpg";
 import img3 from "../../../assets/Shirts/L-unsplash.jpg";
 import img4 from "../../../assets/Shirts/denim.jpg";
 import img5 from "../../../assets/Shirts/R-unsplash.jpg";
+import img6 from "../../../assets/Shirts/P-denim.jpg";
+import img7 from "../../../assets/Shirts/Q-unsplash.jpg";
+import img8 from "../../../assets/Shirts/Y-unsplash.jpg";
+import img9 from "../../../assets/Shirts/Mens-Popover.jpg";
+import img10 from "../../../assets/Shirts/blur-shirt.jpg";
 
 
 class Shirts extends Component {
@@ -41,40 +46,34 @@ class Shirts extends Component {
         <Container>
           <Slider {...settings}>
             <div>
-              <FeatureCard image={img} title="Short Sleeves" />
+              <FeatureCard image={img} title="Sky Blue" price="9$"/>
             </div>
             <div>
-              <FeatureCard image={img2} title="Long Sleeves" />
+              <FeatureCard image={img2} title="Beach Light" price="25.50$"/>
             </div>
             <div>
-              <FeatureCard image={img3} title="Formal" />
+              <FeatureCard image={img3} title="Official Formal" price="9.99$"/>
             </div>
             <div>
-              <FeatureCard image={img4} title="Denim" />
+              <FeatureCard image={img4} title="Denim" price="19$" />
             </div>
             <div>
-              <FeatureCard image={img5} title="Stylish" />
+              <FeatureCard image={img5} title="Red Black" price="12$"/>
             </div>
             <div>
-              <FeatureCard image={img} title="Short Sleeves" />
+              <FeatureCard image={img6} title="Blue White Denim" price="56$"/>
             </div>
             <div>
-              <FeatureCard image={img2} title="Long Sleeves" />
+              <FeatureCard image={img7} title="White Long Sleeve" price="8$" />
             </div>
             <div>
-              <FeatureCard image={img3} title="Formal" />
+              <FeatureCard image={img8} title="Blue Dotted" price="9.50$"/>
             </div>
             <div>
-              <FeatureCard image={img4} title="Denim" />
+              <FeatureCard image={img9} title="Mens popover" price="30$"/>
             </div>
             <div>
-              <FeatureCard image={img5} title="Stylish" />
-            </div>
-            <div>
-              <FeatureCard image={img4} title="Denim" />
-            </div>
-            <div>
-              <FeatureCard image={img5} title="Stylish" />
+              <FeatureCard image={img10} title="Strapped" price="21$"/>
             </div>
           </Slider>
         </Container>
