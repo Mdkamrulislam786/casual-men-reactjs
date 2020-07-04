@@ -90,7 +90,7 @@ const CMNavbar = () => {
               </span>
             </Button>
 
-            <Nav.Link className="p-2" eventKey={2} href="#memes">
+            <Nav.Link as={Link} to="/Shopping-Cart" className="p-2" eventKey={2}>
               <span style={{ color: "white" }}>
                 <i className="fas fa-shopping-cart">
                   <span>0</span>Cart

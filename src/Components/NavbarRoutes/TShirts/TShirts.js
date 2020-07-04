@@ -42,44 +42,31 @@ class TShirts extends Component {
         <Container>
           <Slider {...settings}>
             <div>
-              <Link
-                to="/polos"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <FeatureCard image={img} title="Polos" />
-              </Link>
+              <FeatureCard image={img} title="Polos" linkTo="/polos" />
             </div>
             <div>
-              <Link
-                to="/LongSleeves"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <FeatureCard image={img2} title="Long Sleeves" />
-              </Link>
+              <FeatureCard
+                image={img2}
+                title="Long Sleeves"
+                linkTo="/LongSleeves"
+              />
             </div>
             <div>
-              <Link
-                to="/ShortSleeves"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <FeatureCard image={img3} title="Short Sleeve" />
-              </Link>
+              <FeatureCard
+                image={img3}
+                title="Short Sleeve"
+                linkTo="/ShortSleeves"
+              />
             </div>
             <div>
-              <Link
-                to="/Vneck"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <FeatureCard image={img4} title="V-Neck" />
-              </Link>
+              <FeatureCard image={img4} title="V-Neck" linkTo="/Vneck" />
             </div>
             <div>
-              <Link
-                to="/Circle-neck"
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                <FeatureCard image={img5} title="Circle Neck" />
-              </Link>
+              <FeatureCard
+                image={img5}
+                title="Circle Neck"
+                linkTo="/Circle-neck"
+              />
             </div>
           </Slider>
         </Container>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./popularp.css";
 import Buttons from "../widgets/Buttons/button";
+import {Link} from 'react-router-dom'
 
 const Popularp = () => {
   return (
@@ -39,7 +40,7 @@ const Popularp = () => {
             </Col>
           </Row>
           <div className="middle">
-            <Button size="lg" className="middle-btn" variant="danger">
+            <Button size="lg" as={Link} to="/online-shop&all-collections" className="middle-btn" variant="danger">
               EXPLORE NOW
             </Button>
           </div>
