@@ -10,6 +10,7 @@ const ActionBtn = (props) => {
         variant="none"
         type="button"
         className="ActionBtn"
+        onClick={props.onClick}
       >
         <span className="buttonp" >
           <i style={{ color: "goldenrod" }} className="fas fa-shopping-cart"></i>

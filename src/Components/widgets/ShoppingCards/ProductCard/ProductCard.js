@@ -1,15 +1,17 @@
 import React from "react";
 import { Container, Row, Col, Image, Tabs, Tab, Nav } from "react-bootstrap";
-import Buttons from "../../Buttons/button";
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
 import OurPP from "../../../OurPP/OurPP";
 import ActionBtn from "../../Buttons/ActionBtn/ActionBtn";
 import "./ProductCard.css";
+//REDUX
+import { addBasket } from "../../../../actions/addAction";
+import { connect } from "react-redux";
 
 //Image
-import img from "../../../../assets/Shirts/A-unsplash.jpg";
+import shirt from "../../../../assets/Shirts/A-unsplash.jpg";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   return (
     <div
       className="ProductCard"
@@ -19,7 +21,7 @@ const ProductCard = () => {
         <Row>
           <Col className="d-flex justify-content-center text-center align-center">
             <Image
-              src={img}
+              src={shirt}
               style={{
                 height: "625px",
                 width: "425px",
@@ -72,7 +74,11 @@ const ProductCard = () => {
                 <a href="#">View size chart</a>
               </p>
             </div>
-            <ActionBtn cta="ADD TO CART" />
+
+            {/* ADDTOCART-BUTTON */}
+            <ActionBtn cta="ADD TO CART"  onClick={()=>props.addBasket('shirt')} />
+            {/* <ActionBtn cta="ADD TO CART"  onClick={()=>props.addBasket('denim')} /> */}
+
             <div style={{ color: "black", margin: "10px 0px" }}>
               <Tab.Container defaultActiveKey="first">
                 <Row>
@@ -157,4 +163,4 @@ const ProductCard = () => {
   );
 };
 
-export default ProductCard;
+export default connect(null, { addBasket }) (ProductCard);

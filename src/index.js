@@ -1,17 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {BrowserRouter} from 'react-router-dom' 
-import Routes from './Route'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./Route";
+//REDUX
+import store from "./store";
+import { Provider } from "react-redux";
 
-const App = () =>{
+const App = () => {
   return (
-    <BrowserRouter>
-        <Routes/>
-    </BrowserRouter>
-  )
-}
-
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
 ReactDOM.render(<App />, document.getElementById("root"));

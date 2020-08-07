@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import getNumbers from "../../../actions/getAction";
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -17,7 +19,13 @@ const logo = () => (
   </span>
 );
 
-const CMNavbar = () => {
+const CMNavbar = (props) => {
+  console.log(props);
+
+  useEffect(() => {
+    getNumbers();
+  }, []);
+
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -38,39 +46,38 @@ const CMNavbar = () => {
                 <NavDropdown.Item as={Link} to="/T-Shirts">
                   T-Shirts
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/polos">Polo</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/polos">
+                  Polo
+                </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/Circle-neck">
                   Circle Neck
                 </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/Vneck">V-Neck</NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/Vneck">
+                  V-Neck
+                </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/LongSleeves">
-                 Long Sleeves
+                  Long Sleeves
                 </NavDropdown.Item>
                 <NavDropdown.Item as={Link} to="/ShortSleeves">
-                 Short Sleeves
+                  Short Sleeves
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav.Item>
-            <Nav.Item
-             
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <Nav.Link  as={Link}
-              to="/shirts"> Shirts</Nav.Link>
+            <Nav.Item style={{ textDecoration: "none", color: "black" }}>
+              <Nav.Link as={Link} to="/shirts">
+                {" "}
+                Shirts
+              </Nav.Link>
             </Nav.Item>
-            <Nav.Item
-             
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <Nav.Link  as={Link}
-              to="/jeans">Jeans</Nav.Link>
+            <Nav.Item style={{ textDecoration: "none", color: "black" }}>
+              <Nav.Link as={Link} to="/jeans">
+                Jeans
+              </Nav.Link>
             </Nav.Item>
-            <Nav.Item
-              
-              style={{ textDecoration: "none", color: "black" }}
-            >
-              <Nav.Link as={Link}
-              to="/online-shop&all-collections">All Collections</Nav.Link>
+            <Nav.Item style={{ textDecoration: "none", color: "black" }}>
+              <Nav.Link as={Link} to="/online-shop&all-collections">
+                All Collections
+              </Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link>Call Now: +8801826391501</Nav.Link>
@@ -90,10 +97,15 @@ const CMNavbar = () => {
               </span>
             </Button>
 
-            <Nav.Link as={Link} to="/Shopping-Cart" className="p-2" eventKey={2}>
+            <Nav.Link
+              as={Link}
+              to="/Shopping-Cart"
+              className="p-2"
+              eventKey={2}
+            >
               <span style={{ color: "white" }}>
                 <i className="fas fa-shopping-cart">
-                  <span>0</span>Cart
+                  <span>{props.basketProps.basketNumbers}</span>Cart
                 </i>
               </span>
             </Nav.Link>
@@ -118,4 +130,8 @@ const CMNavbar = () => {
   );
 };
 
-export default CMNavbar;
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+});
+
+export default connect(mapStateToProps, { getNumbers })(CMNavbar);
