@@ -27,7 +27,7 @@ class OurPP extends Component {
     return (
       <div className="OurPP">
         <div>
-          <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          <h2 style={{ textAlign: "center",marginTop:"30px", marginBottom: "20px" }}>
             OUR MOST POPULAR PRODUCTS
           </h2>
         </div>

@@ -1,8 +1,18 @@
 import React from "react";
-import { Container, Row, Col, Image, Tabs, Tab, Nav } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Image,
+  Tab,
+  Nav
+} from "react-bootstrap";
+
+//COMPONENTS
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
 import OurPP from "../../../OurPP/OurPP";
 import ActionBtn from "../../Buttons/ActionBtn/ActionBtn";
+import ModalButton from "../../ModalButton/ModalButton";
 import "./ProductCard.css";
 //REDUX
 import { addBasket } from "../../../../actions/addAction";
@@ -12,6 +22,7 @@ import { connect } from "react-redux";
 import shirt from "../../../../assets/Shirts/A-unsplash.jpg";
 
 const ProductCard = (props) => {
+  const [modalShow, setModalShow] = React.useState(false);
   return (
     <div
       className="ProductCard"
@@ -28,6 +39,7 @@ const ProductCard = (props) => {
                 margin: "5px",
                 cursor: "zoom-in",
               }}
+              alt="shirt"
             />
           </Col>
           <Col>
@@ -71,12 +83,18 @@ const ProductCard = (props) => {
                 <span>M</span>
                 <span>L</span>
                 <span>XL</span>
-                <a href="#">View size chart</a>
+
+                <a href="#" onClick={() => setModalShow(true)}>
+                  View size chart
+                </a>
               </p>
             </div>
-
+            <ModalButton show={modalShow} onHide={() => setModalShow(false)} />
             {/* ADDTOCART-BUTTON */}
-            <ActionBtn cta="ADD TO CART"  onClick={()=>props.addBasket('shirt')} />
+            <ActionBtn
+              cta="ADD TO CART"
+              onClick={() => props.addBasket("shirt")}
+            />
             {/* <ActionBtn cta="ADD TO CART"  onClick={()=>props.addBasket('denim')} /> */}
 
             <div style={{ color: "black", margin: "10px 0px" }}>
@@ -163,4 +181,4 @@ const ProductCard = (props) => {
   );
 };
 
-export default connect(null, { addBasket }) (ProductCard);
+export default connect(null, { addBasket })(ProductCard);
