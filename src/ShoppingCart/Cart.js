@@ -10,10 +10,6 @@ import denim from "../assets/Shirts/denim.jpg";
 
 const Cart = ({ basketProps, productQuantity, clearProduct }) => {
 
-  // function handleChange(event) {
-  //   this.setState({value: event.target.value});
-  // }
-
   let productsInCart = [];
 
   //GRABS EACH KEYES OF THE PRODUCTS & PASSES ALL THE PRODUCTS KEYS & VALUES
@@ -86,7 +82,7 @@ const Cart = ({ basketProps, productQuantity, clearProduct }) => {
         </div>
         <div className="d-flex justify-content-center">
           <Button
-            onClick={() => alert(`CONFIRM YOUR ORDER: TOTAL PRICE 9$`)}
+            onClick={() => alert(`CONFIRM YOUR ORDER: TOTAL PRICE ${basketProps.cartCost}$`)}
             type="button"
             varient="primary"
           >

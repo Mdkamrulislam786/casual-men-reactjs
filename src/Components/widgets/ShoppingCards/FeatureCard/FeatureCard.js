@@ -1,12 +1,11 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import {Link} from 'react-router-dom';
 import "./FeatureCard.css";
 
 const FeatureCard = (props) => {
   return (
-    <div className="FeatureCard">
-      <Link to={props.linkTo} style={{textDecoration:'none', color:'#000'}}>
+    <div onClick={props.OnClick} className="FeatureCard">
+      <div style={{textDecoration:'none', color:'#000'}}>
         <Card
           style={{
             width: "18rem",
@@ -37,7 +36,7 @@ const FeatureCard = (props) => {
             </div>
           </Card.Body>
         </Card>
-      </Link>
+      </div>
     </div>
   );
 };

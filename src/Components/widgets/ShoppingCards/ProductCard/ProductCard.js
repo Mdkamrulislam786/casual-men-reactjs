@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Image,
-  Tab,
-  Nav
-} from "react-bootstrap";
+import { Container, Row, Col, Image, Tab, Nav } from "react-bootstrap";
 
 //COMPONENTS
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
@@ -19,10 +12,12 @@ import { addBasket } from "../../../../actions/addAction";
 import { connect } from "react-redux";
 
 //Image
-import shirt from "../../../../assets/Shirts/A-unsplash.jpg";
+import sizechart from '../../../../assets/size-chart.png'
+
 
 const ProductCard = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
+  
   return (
     <div
       className="ProductCard"
@@ -32,21 +27,21 @@ const ProductCard = (props) => {
         <Row>
           <Col className="d-flex justify-content-center text-center align-center">
             <Image
-              src={shirt}
+              src={props.image}
+              className="productImage"
               style={{
                 height: "625px",
                 width: "425px",
                 margin: "5px",
                 cursor: "zoom-in",
               }}
-              alt="shirt"
             />
           </Col>
           <Col>
             <div>
-              <h3>Sky Blue</h3>
+              <h3>{props.title}</h3>
               <b>Price:</b>
-              <span> 9$</span>
+              <span> {props.price}</span>
               <p>
                 Pay with{" "}
                 <img
@@ -89,13 +84,12 @@ const ProductCard = (props) => {
                 </a>
               </p>
             </div>
-            <ModalButton show={modalShow} onHide={() => setModalShow(false)} />
+            
             {/* ADDTOCART-BUTTON */}
             <ActionBtn
               cta="ADD TO CART"
-              onClick={() => props.addBasket("shirt")}
+              onClick={() => props.addBasket(props.add)}
             />
-            {/* <ActionBtn cta="ADD TO CART"  onClick={()=>props.addBasket('denim')} /> */}
 
             <div style={{ color: "black", margin: "10px 0px" }}>
               <Tab.Container defaultActiveKey="first">
@@ -175,10 +169,11 @@ const ProductCard = (props) => {
             </h3>
             <OurPP />
           </div>
+          <ModalButton  image={sizechart} show={modalShow} onHide={() => setModalShow(false)} />
         </Row>
       </Container>
     </div>
   );
 };
 
-export default connect(null, { addBasket })(ProductCard);
+export default connect(null, { addBasket }) (ProductCard);

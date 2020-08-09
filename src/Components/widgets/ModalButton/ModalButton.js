@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal, Button,Image } from "react-bootstrap";
-import sizechart from '../../../assets/size-chart.png'
+
 
 const ModalButton = (props) => {
   return (
@@ -13,7 +13,7 @@ const ModalButton = (props) => {
         centered
       >
         <Modal.Body>
-          <Image src={sizechart} fluid />
+          <Image src={props.image} fluid />
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Close</Button>
