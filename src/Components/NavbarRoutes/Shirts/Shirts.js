@@ -126,6 +126,9 @@ class Shirts extends Component {
       />
     ];
    
+    featureCard.map((item,index)=>{
+      
+    })
     //Which modal to show on <FaetureCard> Click 
     let modalToShow = (modal) => {
       return (
@@ -154,6 +157,8 @@ class Shirts extends Component {
     
     //WHICH COMPONENT TO SHOW
     const showComponent = (component, component2) => {
+      console.log(component);
+      console.log(component2);
       if (
         this.state.whichComponentToShow === "FeatureCard" &&
         component === featureCard[0]
