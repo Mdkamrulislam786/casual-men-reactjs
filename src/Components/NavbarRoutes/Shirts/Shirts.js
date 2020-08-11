@@ -19,80 +19,208 @@ import img7 from "../../../assets/Shirts/Q-unsplash.jpg";
 import img8 from "../../../assets/Shirts/Y-unsplash.jpg";
 import img9 from "../../../assets/Shirts/Mens-Popover.jpg";
 import img10 from "../../../assets/Shirts/blur-shirt.jpg";
-import shirts from "../../../assets/Shirts/A-unsplash.jpg";
 
 class Shirts extends Component {
   state = {
     whichComponentToShow: "FeatureCard",
     show: false,
-    setShow: false,
   };
 
   onClick = () => {
     this.setState({ whichComponentToShow: "ProductCard", show: true });
   };
 
-  handleClose = () => {this.setState({setShow:false})};
-  handleShow = () =>{this.setState({setShow:true})};
+  handleClose = () => {
+    this.setState({ show: false });
+  };
+  handleShow = () => {
+    this.setState({ show: true });
+  };
 
   render() {
-    const featureCard = (
+    //FeatureCard components in array
+    const featureCard = [
       <FeatureCard
-        OnClick={this.onClick}
+        onClick={this.onClick}
         image={img}
         title="Sky Blue"
         price="9$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img2}
+        title="Beach Light"
+        price="25.50$"
+      />,
+      <FeatureCard
+        image={img3}
+        onClick={this.onClick}
+        title="Official Formal"
+        price="9.99$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img4}
+        title="Denim"
+        price="19$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img5}
+        title="Red Black"
+        price="12$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img6}
+        title="Blue White Denim"
+        price="56$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img7}
+        title="White Long Sleeve"
+        price="8$"
+      />,
+      <FeatureCard
+        onClick={this.onClick}
+        image={img8}
+        title="Blue Dotted"
+        price="9.50$"
+      />,
+    ];
+    //ProductCard Components in array 
+    const productCard = [
+      <ProductCard image={img} title="Sky Blue" price="9$" add="shirt" />,
+      <ProductCard
+        image={img2}
+        title="Beach Light"
+        price="25.50$"
+        add="shirt"
+      />,
+      <ProductCard
+        image={img3}
+        title="Official Formal"
+        price="9.99$"
+        add="shirt"
+      />,
+      <ProductCard image={img4} title="Denim" price="19$" add="shirt" />,
+      <ProductCard image={img5} title="Red Black" price="12$" add="shirt" />,
+      <ProductCard
+        image={img6}
+        title="Blue White Denim"
+        price="56$"
+        add="shirt"
+      />,
+      <ProductCard
+        image={img7}
+        title="White Long Sleeve"
+        price="8$"
+        add="shirt"
+      />,
+      <ProductCard
+        image={img8}
+        title="Blue Dotted"
+        price="9.50$"
+        add="shirt"
       />
-    );
-    const productCard = (
-      <ProductCard image={shirts} title="Sky Blue" price="9$" add="shirt" />
-    );
-
+    ];
+   
+    //Which modal to show on <FaetureCard> Click 
+    let modalToShow = (modal) => {
+      return (
+        <Modal
+          show={this.state.show}
+          onHide={this.handleClose}
+          centered
+          size="xl"
+        >
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>
+            <Container fluid>
+              <Row>
+                <Col lg={12}> {modal}</Col>
+              </Row>
+            </Container>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={this.handleClose}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      );
+    };
+    
     //WHICH COMPONENT TO SHOW
-    const ShowComponent = () => {
-      if (this.state.whichComponentToShow === "FeatureCard") {
-        return <div>{featureCard}</div>;
-      } else if (this.state.whichComponentToShow === "ProductCard") {
-        return (
-          <div>
-            <Modal
-              show={this.state.show}
-              onHide={this.handleClose}
-              centered
-              size="xl"
-            >
-              <Modal.Header closeButton></Modal.Header>
-              <Modal.Body>
-                <Container fluid>
-                  <Row>
-                    <Col lg={12}> {productCard}</Col>
-                  </Row>
-                </Container>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="secondary" onClick={this.handleClose}>
-                  Close
-                </Button>
-              </Modal.Footer>
-            </Modal>
-          </div>
-        );
+    const showComponent = (component, component2) => {
+      if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[0]
+      ) {
+        return <div>{featureCard[0]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[1]
+      ) {
+        return <div>{featureCard[1]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[2]
+      ) {
+        return <div>{featureCard[2]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[3]
+      ) {
+        return <div>{featureCard[3]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[4]
+      ) {
+        return <div>{featureCard[4]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[5]
+      ) {
+        return <div>{featureCard[5]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[6]
+      ) {
+        return <div>{featureCard[6]}</div>;
+      } else if (
+        this.state.whichComponentToShow === "FeatureCard" &&
+        component === featureCard[7]
+      ) {
+        return <div>{featureCard[7]}</div>;
+      } else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[0]) {
+        return <div>{modalToShow(productCard[0])}</div>;
+      }else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[1]) {
+        return <div>{modalToShow(productCard[1])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[2]) {
+        return <div>{modalToShow(productCard[2])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[3]) {
+        return <div>{modalToShow(productCard[3])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[4]) {
+        return <div>{modalToShow(productCard[4])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[5]) {
+        return <div>{modalToShow(productCard[5])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[6]) {
+        return <div>{modalToShow(productCard[6])}</div>;
+      }
+      else if (this.state.whichComponentToShow === "ProductCard" && component2 === productCard[7]) {
+        return <div>{modalToShow(productCard[7])}</div>;
       }
     };
 
-    // const settings = {
-    //   accessibility: true,
-    //   dots: true,
-    //   infinite: true,
-    //   slidesToShow: 4,
-    //   slidesToScroll: 1,
-    //   adaptiveHeight: true,
-    //   autoplay: true,
-    //   speed: 1000,
-    //   autoplaySpeed: 3000,
-    //   focusOnSelect: true,
-    //   rows: 2,
-    // };
+     
+
 
     return (
       <div className="Shirts" style={{ margin: "3rem 0rem" }}>
@@ -106,54 +234,31 @@ class Shirts extends Component {
         </div>
         <Container>
           <Row>
-            <div>{ShowComponent()}</div>
-
             <Col>
-              <FeatureCard image={img2} title="Beach Light" price="25.50$" />
+              <div>{showComponent(featureCard[0],productCard[0])}</div>
             </Col>
             <Col>
-              <div>
-                <FeatureCard
-                  image={img3}
-                  title="Official Formal"
-                  price="9.99$"
-                />
-              </div>
+              <div>{showComponent(featureCard[1],productCard[1])}</div>
             </Col>
             <Col>
-              <div>
-                <FeatureCard image={img4} title="Denim" price="19$" />
-              </div>
+              <div>{showComponent(featureCard[2],productCard[2])}</div>
+            </Col>
+            <Col>
+              <div>{showComponent(featureCard[3],productCard[3])}</div>
             </Col>
           </Row>
           <Row>
             <Col>
-              <div>
-                <FeatureCard image={img5} title="Red Black" price="12$" />
-              </div>
+              <div>{showComponent(featureCard[4],productCard[4])}</div>
             </Col>
             <Col>
-              <div>
-                <FeatureCard
-                  image={img6}
-                  title="Blue White Denim"
-                  price="56$"
-                />
-              </div>
+              <div>{showComponent(featureCard[5],productCard[5])}</div>
             </Col>
             <Col>
-              <div>
-                <FeatureCard
-                  image={img7}
-                  title="White Long Sleeve"
-                  price="8$"
-                />
-              </div>
+              <div>{showComponent(featureCard[6],productCard[6])}</div>
             </Col>
             <Col>
-              <div>
-                <FeatureCard image={img8} title="Blue Dotted" price="9.50$" />
-              </div>
+              <div>{showComponent(featureCard[7],productCard[7])}</div>
             </Col>
           </Row>
         </Container>
@@ -172,3 +277,17 @@ export default Shirts;
               <FeatureCard image={img10} title="Strapped" price="21$" />
             </div> */
 }
+
+// const settings = {
+//   accessibility: true,
+//   dots: true,
+//   infinite: true,
+//   slidesToShow: 4,
+//   slidesToScroll: 1,
+//   adaptiveHeight: true,
+//   autoplay: true,
+//   speed: 1000,
+//   autoplaySpeed: 3000,
+//   focusOnSelect: true,
+//   rows: 2,
+// };

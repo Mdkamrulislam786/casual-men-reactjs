@@ -28,7 +28,6 @@ const ProductCard = (props) => {
           <Col className="d-flex justify-content-center text-center align-center">
             <Image
               src={props.image}
-              className="productImage"
               style={{
                 height: "625px",
                 width: "425px",

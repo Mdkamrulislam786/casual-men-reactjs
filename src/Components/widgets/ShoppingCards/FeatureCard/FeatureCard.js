@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { Card } from "react-bootstrap";
 import "./FeatureCard.css";
 
 const FeatureCard = (props) => {
+  console.log(props);
   return (
-    <div onClick={props.OnClick} className="FeatureCard">
+    <div  onClick={props.onClick} className="FeatureCard">
+      
       <div style={{textDecoration:'none', color:'#000'}}>
         <Card
           style={{
