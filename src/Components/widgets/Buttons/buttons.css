@@ -55,4 +55,12 @@
     transform-origin: bottom right;
     transform: scale(0);
 }
+@media (min-width:320px) and (max-width:475px){
+    .buttonp{
+        font-size: 12px !important;
+        padding: 1px;
+        font-weight:400;
+        letter-spacing: 1px;
+    }
+}
 

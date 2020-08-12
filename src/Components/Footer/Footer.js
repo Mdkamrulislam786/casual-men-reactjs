@@ -9,8 +9,8 @@ const Footer = () => {
       <div className="footer">
         <Container fluid>
           <Row>
-            <Col>
-              <div>
+            <Col xs={12} xl={4}  md={4}>
+              <div className="foterLogo">
                 <p style={{ fontSize: "30px", fontWeight:'700', color: "#61b4d6" }}>
                   <i className="fas fa-male"></i> CASUAL MEN
                 </p>
@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} xl={2} md={2}>
               <div>
                   <h4>About Casual Men</h4>
                   <ul>
@@ -34,7 +34,7 @@ const Footer = () => {
                   </ul>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} xl={2}  md={2}>
               <div>
               <h4>Customer Service</h4>
                   <ul>
@@ -46,13 +46,13 @@ const Footer = () => {
                   </ul>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} xl={2}  md={2}>
               <div>
                   <h4>WANNA TALK ?</h4>
-                  <Buttons cta="Contact us"></Buttons>
+                  <Buttons cta="Contact"></Buttons>
               </div>
             </Col>
-            <Col>
+            <Col xs={6} xl={2}  md={2}>
             <div>
                   <h5>FIND A SHOP LOCATION</h5>
                   <Buttons cta="SEARCH"></Buttons>
@@ -62,7 +62,7 @@ const Footer = () => {
           <Row>
             <div>
               {" "}
-              @Copywrite 2020 Casual Men  | Terms & Condition | Privacy & Policy
+              <h6>@Copywrite 2020 Casual Men  | Terms & Condition | Privacy & Policy</h6>
             </div>
           </Row>
         </Container>

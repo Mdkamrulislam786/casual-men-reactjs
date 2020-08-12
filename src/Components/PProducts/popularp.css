@@ -27,7 +27,6 @@
     align-items: center;
     text-align: center;
     position: relative;
-   
 }
 .texts{
     z-index: 3;
@@ -66,4 +65,21 @@
 }
 .middle-btn:hover{
     background-color: #000 !important;
+}
+
+
+@media (min-width: 320px) and (max-width: 475px){
+    .texts h3{
+        font-size: 24px;
+        font-weight: 500;
+    }
+    .texts p{
+      display: none;
+    }
+    .middle-btn{
+        color: #000;
+        font-size: 18px;
+        font-weight: 400 !important;
+        padding: 5px !important;
+    }
 }

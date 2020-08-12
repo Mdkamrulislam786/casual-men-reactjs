@@ -15,6 +15,7 @@ const FeatureCard = (props) => {
             paddingRight: "20px",
             overflow: "hidden",
           }}
+          className="Card"
         >
           <div className="cardImg">
             <Card.Img variant="top" src={props.image} className="ppImage" />
@@ -26,7 +27,7 @@ const FeatureCard = (props) => {
                 className="d-flex flex-row justify-content-between"
               >
                 <p>
-                  <b>{props.title}</b>
+                  {props.title}
                 </p>
                 <h6>{props.price}</h6>
               </div>
