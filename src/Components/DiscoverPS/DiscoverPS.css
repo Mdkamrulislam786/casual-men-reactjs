@@ -34,3 +34,17 @@
         font-size: 12px;
     }
 }
+@media (min-width:768px)and (max-width:1024px){
+    .DiscoverPS{
+        height: 100%;
+    }
+    .DiscoverPS h3{
+        font-size: 2rem;
+    }
+    .DiscoverPS h2{
+        font-size: 2rem;
+    }
+    .DiscoverPS p{
+        font-size: 16px;
+    }
+}

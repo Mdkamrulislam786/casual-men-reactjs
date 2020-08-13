@@ -10,7 +10,7 @@ const FeatureCard = (props) => {
       <div style={{textDecoration:'none', color:'#000'}}>
         <Card
           style={{
-            width: "18rem",
+            width: "17rem",
             paddingLeft: "20px",
             paddingRight: "20px",
             overflow: "hidden",

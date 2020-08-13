@@ -32,6 +32,40 @@ class Polos extends Component {
       autoplaySpeed: 3000,
       focusOnSelect: true,
       rows: 2,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            initialSlide: 2,
+          },
+        },
+
+        {
+          breakpoint: 425,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          },
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          },
+        },
+      ]
     };
     return (
       <div className="AllTshirts">

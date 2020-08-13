@@ -28,7 +28,7 @@ const CMNavbar = (props) => {
 
   return (
     <div className="CMnavbar">
-      <Navbar collapseOnSelect expand="lg" variant="dark">
+      <Navbar collapseOnSelect expand="xl" variant="dark">
         <Navbar.Brand as={Link} to="/">
           {logo()}
         </Navbar.Brand>

@@ -25,6 +25,40 @@ class TShirts extends Component {
       speed: 1000,
       autoplaySpeed: 3000,
       focusOnSelect: true,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          },
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            initialSlide: 2,
+          },
+        },
+
+        {
+          breakpoint: 425,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 320,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
+        },
+      ],
     };
     return (
       <div className="MainCatagory">
@@ -42,31 +76,30 @@ class TShirts extends Component {
         <Container>
           <Slider {...settings}>
             <div>
-              <FeatureCard image={img} title="Polos" linkTo="/polos" />
+              <Link to="/polos">
+                <FeatureCard image={img} title="Polos" />
+              </Link>
             </div>
             <div>
-              <FeatureCard
-                image={img2}
-                title="Long Sleeves"
-                linkTo="/LongSleeves"
-              />
+              <Link to="/LongSleeves">
+                <FeatureCard image={img2} title="Long Sleeves" />
+              </Link>
             </div>
             <div>
-              <FeatureCard
-                image={img3}
-                title="Short Sleeve"
-                linkTo="/ShortSleeves"
-              />
+              <Link to="/ShortSleeves">
+                <FeatureCard image={img3} title="Short Sleeve" />
+              </Link>
             </div>
             <div>
-              <FeatureCard image={img4} title="V-Neck" linkTo="/Vneck" />
+              <Link to="/Vneck">
+                {" "}
+                <FeatureCard image={img4} title="V-Neck" />
+              </Link>
             </div>
             <div>
-              <FeatureCard
-                image={img5}
-                title="Circle Neck"
-                linkTo="/Circle-neck"
-              />
+              <Link to="/Circle-neck">
+                <FeatureCard image={img5} title="Circle Neck" />
+              </Link>
             </div>
           </Slider>
         </Container>

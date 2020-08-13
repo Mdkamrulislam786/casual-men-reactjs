@@ -38,8 +38,9 @@
 }
 .texts p{
     color: #ffffff;
+    font-family:  'Robotto', sans-serif;
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 .col{
     padding-right: 1px !important;
@@ -82,4 +83,13 @@
         font-weight: 400 !important;
         padding: 5px !important;
     }
+}
+@media (min-width:768px)and (max-width:1024px) {
+    .texts h3{
+        font-size: 2rem;
+    }
+    .texts p{
+     font-size: 16px;
+    }
+
 }
