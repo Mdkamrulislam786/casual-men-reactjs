@@ -79,6 +79,11 @@ const CMNavbar = (props) => {
                 All Collections
               </Nav.Link>
             </Nav.Item>
+            <Nav.Item style={{ textDecoration: "none", color: "black" }}>
+              <Nav.Link as={Link} to="/Mobiles">
+                Mobiles
+              </Nav.Link>
+            </Nav.Item>
             <Nav.Item>
               <Nav.Link>Call Now: +8801826391501</Nav.Link>
             </Nav.Item>

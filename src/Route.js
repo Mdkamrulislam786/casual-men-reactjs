@@ -15,6 +15,7 @@ import Vneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Vneck/Vnec
 import Cneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/CircleNeck/Cneck'
 import ProductCard from './Components/widgets/ShoppingCards/ProductCard/ProductCard'
 import Cart from './ShoppingCart/Cart'
+import Mobiles from './Components/NavbarRoutes/Mobile/Mobiles'
 class Routes extends Component {
   render() {
     return (
@@ -33,6 +34,7 @@ class Routes extends Component {
           <Route path="/Circle-neck" exact component={Cneck}/>
           <Route path="/ProductCard-add-to-cart" exact component={ProductCard}/>
           <Route path="/Shopping-Cart" exact component={Cart}/>
+          <Route path="/Mobiles" exact component={Mobiles}/>
         </Switch>
       </Layout>
     );

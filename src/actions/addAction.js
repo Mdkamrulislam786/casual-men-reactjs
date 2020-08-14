@@ -1,4 +1,4 @@
-import { ADD_PRODUCT_BASKET } from "./types";
+import { ADD_PRODUCT_BASKET,SHOW_PRODUCT_DETAILS } from "./types";
 
 export const addBasket = (productName) => {
   return (dispatch) => {
@@ -7,6 +7,18 @@ export const addBasket = (productName) => {
     
     dispatch({
       type: ADD_PRODUCT_BASKET,
+      payload: productName
+    });
+  };
+};
+
+export const showProductDetails = (productName) => {
+  return (dispatch) => {
+    console.log("showing product details");
+    console.log("ProductDetails= ", productName);
+    
+    dispatch({
+      type: SHOW_PRODUCT_DETAILS,
       payload: productName
     });
   };

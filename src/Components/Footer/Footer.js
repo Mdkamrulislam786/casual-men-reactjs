@@ -49,13 +49,13 @@ const Footer = () => {
             <Col xs={6} xl={2}  md={2}>
               <div>
                   <h4>WANNA TALK ?</h4>
-                  <Buttons cta="Contact"></Buttons>
+                  <Buttons linkTo="/" cta="Contact"></Buttons>
               </div>
             </Col>
             <Col xs={6} xl={2}  md={2}>
             <div>
                   <h5>FIND A SHOP LOCATION</h5>
-                  <Buttons cta="SEARCH"></Buttons>
+                  <Buttons linkTo="/" cta="SEARCH"></Buttons>
               </div>
             </Col>
           </Row>
