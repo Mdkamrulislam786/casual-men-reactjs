@@ -1,4 +1,4 @@
-import { ADD_PRODUCT_BASKET,SHOW_PRODUCT_DETAILS } from "./types";
+import { ADD_PRODUCT_BASKET,HANDLE_DETAILS,ADD_TO_CART  } from "./types";
 
 export const addBasket = (productName) => {
   return (dispatch) => {
@@ -12,13 +12,25 @@ export const addBasket = (productName) => {
   };
 };
 
-export const showProductDetails = (productName) => {
+// export const showProductDetails = (productName) => {
+//   return (dispatch) => {
+//     console.log("showing product details");
+//     console.log("ProductDetails= ", productName);
+    
+//     dispatch({
+//       type: HANDLE_DETAILS ,
+//       payload: productName
+//     });
+//   };
+// };
+
+export const addToCart = (productName) => {
   return (dispatch) => {
-    console.log("showing product details");
-    console.log("ProductDetails= ", productName);
+    console.log("adding to cart");
+    console.log("addToCart= ", productName);
     
     dispatch({
-      type: SHOW_PRODUCT_DETAILS,
+      type: ADD_TO_CART ,
       payload: productName
     });
   };

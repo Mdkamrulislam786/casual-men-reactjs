@@ -1,11 +1,11 @@
-import React, { Component, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Component} from "react";
+
 //COMPONENTS
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import FeatureCard from "../../widgets/ShoppingCards/FeatureCard/FeatureCard";
 import AllDressHeader from "../../widgets/AllDressHeader/AllDressHeader";
 import ProductCard from "../../widgets/ShoppingCards/ProductCard/ProductCard";
-import Slider from "react-slick";
+
 
 //Images
 import ShirtHeader from "../../../assets/Shirts/header-new.jpg";

@@ -1,6 +1,6 @@
 import {GET_NUMBERS_BASKET} from './types'
 
- const getNumbers = () => {
+const getNumbers = () => {
     return (dispatch) => {
         console.log("getting all to basket");
     
@@ -9,4 +9,6 @@ import {GET_NUMBERS_BASKET} from './types'
         });
       };
 }
+
 export default getNumbers
+
