@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Card } from "react-bootstrap";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import "./Product.css";
-import {connect}  from 'react-redux'
-import handleDetails from '../../../actions/handleDetails'
+import { connect } from "react-redux";
+import handleDetails from "../../../actions/handleDetails";
+import { ProductConsumer } from "../../../context";
 
- class Product extends Component {
+class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
@@ -14,29 +15,33 @@ import handleDetails from '../../../actions/handleDetails'
         <Card
           style={{ borderColor: "transparent", transition: "all 1s linear" }}
         >
-          <div
-            className="img-container p-5"
-            onClick={() => this.props.handleDetails(id)}
-          >
-            <Link to="/ProductCard-add-to-cart">
-              <img src={img} alt="product" className="card-img-top" />
-            </Link>
-            <button
-              className="cart-btn"
-              disabled={inCart ? true : false}
-              onClick={() => {
-                console.log("added to the cart");
-              }}
-            >
-              {inCart ? (
-                <p disabled className="text-capitalize mb-0">
-                  in cart
-                </p>
-              ) : (
-                <i className=" fas fa-cart-plus" />
-              )}
-            </button>
-          </div>
+          <ProductConsumer>
+            {(value) => (
+              <div
+                className="img-container p-5"
+                onClick={() => value.handleDetail(id)}
+              >
+                <Link to="/ProductCard-add-to-cart">
+                  <img src={img} alt="product" className="card-img-top" />
+                </Link>
+                <button
+                  className="cart-btn"
+                  disabled={inCart ? true : false}
+                  onClick={() => {
+                    value.addToCart(id)
+                  }}
+                >
+                  {inCart ? (
+                    <p disabled className="text-capitalize mb-0">
+                      in cart
+                    </p>
+                  ) : (
+                    <i className=" fas fa-cart-plus" />
+                  )}
+                </button>
+              </div>
+            )}
+          </ProductConsumer>
           {/* card-footer */}
           <div
             className="card-footer d-flex justify-content-between"
@@ -54,11 +59,7 @@ import handleDetails from '../../../actions/handleDetails'
   }
 }
 
-const mapStateToProps = (state) => ({
-  mobileProps: state.mobileState,
-});
-
-export default connect(mapStateToProps, { handleDetails })(Product);
+export default Product;
 
 Product.propTypes = {
   product: PropTypes.shape({

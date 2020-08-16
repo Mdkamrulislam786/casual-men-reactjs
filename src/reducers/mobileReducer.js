@@ -60,11 +60,11 @@ export default (state = mobileState, action) => {
         }
       }
     case ADD_TO_CART:
-      productDetails = { ...(state.detailProduct.id = [action.payload]) };
-      console.log(`the id is ${productDetails}`);
+      product = { ...(state.detailProduct.id = [action.payload]) };
+      console.log(`the id is ${product}`);
       return {
         ...state,
-        productDetails,
+        product,
       };
       break;
     default:

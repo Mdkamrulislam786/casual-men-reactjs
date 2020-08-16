@@ -8,13 +8,16 @@ import Routes from "./Route";
 import store from "./store";
 import { Provider } from "react-redux";
 
+//react context api
+import { ProductProvider } from "./context";
+
 const App = () => {
   return (
-    <Provider store={store}>
+    <ProductProvider>
       <BrowserRouter>
         <Routes />
       </BrowserRouter>
-    </Provider>
+    </ProductProvider>
   );
 };
 

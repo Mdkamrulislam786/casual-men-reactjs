@@ -110,7 +110,7 @@ const CMNavbar = (props) => {
             >
               <span style={{ color: "white" }}>
                 <i className="fas fa-shopping-cart">
-                  <span>{props.basketProps.basketNumbers}</span>Cart
+                  <span>0</span>Cart
                 </i>
               </span>
             </Nav.Link>
@@ -139,4 +139,4 @@ const mapStateToProps = (state) => ({
   basketProps: state.basketState,
 });
 
-export default connect(mapStateToProps, { getNumbers })(CMNavbar);
+export default CMNavbar;
