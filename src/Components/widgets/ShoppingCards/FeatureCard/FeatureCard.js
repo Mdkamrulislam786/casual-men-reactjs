@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import "./FeatureCard.css";
 
 const FeatureCard = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div  onClick={props.onClick} className="FeatureCard">
       

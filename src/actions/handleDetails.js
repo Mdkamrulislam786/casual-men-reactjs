@@ -1,11 +1,12 @@
 import {HANDLE_DETAILS} from './types'
 
-const handleDetails = () => {
+const handleDetails = (id) => {
     return (dispatch) => {
         console.log("handling details");
     
         dispatch({
-          type: HANDLE_DETAILS
+          type: HANDLE_DETAILS,
+          payload: id
         });
       };
 }

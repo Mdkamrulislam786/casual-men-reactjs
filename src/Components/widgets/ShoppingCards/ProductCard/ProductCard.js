@@ -5,10 +5,12 @@ import { Container, Row, Col, Image, Tab, Nav } from "react-bootstrap";
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
 import OurPP from "../../../OurPP/OurPP";
 import ActionBtn from "../../Buttons/ActionBtn/ActionBtn";
+import Buttons from '../../Buttons/button'
 import ModalButton from "../../ModalButton/ModalButton";
 import "./ProductCard.css";
 //REDUX
 import { addBasket } from "../../../../actions/addAction";
+import {addToCart}  from '../../../../actions/addAction'
 import { connect } from "react-redux";
 
 //Image
@@ -17,6 +19,8 @@ import sizechart from '../../../../assets/size-chart.png'
 
 const ProductCard = (props) => {
   const [modalShow, setModalShow] = React.useState(false);
+  const {id,img,info,price,title,inCart} = props.mobileProps.detailProduct
+  console.log(props);
   
   return (
     <div
@@ -27,7 +31,7 @@ const ProductCard = (props) => {
         <Row>
           <Col className="d-flex justify-content-center text-center align-center">
             <Image
-              src={props.image}
+              src={img}
               style={{
                 height: "625px",
                 width: "425px",
@@ -38,9 +42,9 @@ const ProductCard = (props) => {
           </Col>
           <Col>
             <div>
-              <h3>{props.title}</h3>
+              <h3>{title}</h3>
               <b>Price:</b>
-              <span> {props.price}</span>
+              <span> {price}$</span>
               <p>
                 Pay with{" "}
                 <img
@@ -85,10 +89,15 @@ const ProductCard = (props) => {
             </div>
             
             {/* ADDTOCART-BUTTON */}
+            <div className="d-flex">
             <ActionBtn
-              cta="ADD TO CART"
-              onClick={() => props.addBasket(props.add)}
+              cta={inCart? 'IN CART': 'ADD TO CART'}
+              onClick={()=>{props.addToCart(id)}}
+              // onClick={() => props.addBasket(props.add)}
             />
+            <Buttons linkTo="Mobiles" cta="Back To Products"/>
+            </div>
+        
 
             <div style={{ color: "black", margin: "10px 0px" }}>
               <Tab.Container defaultActiveKey="first">
@@ -123,18 +132,7 @@ const ProductCard = (props) => {
                         <div className="productDescription">
                           <h3>About The Product</h3>
                           <p>
-                            Aliqua laboris amet in irure culpa voluptate
-                            consequat proident commodo fugiat quis laborum. Id
-                            adipisicing culpa tempor consequat consectetur
-                            dolore minim ipsum.
-                            <br />
-                            Nisi incididunt officia labore adipisicing ex quis
-                            nulla elit duis nulla ea cupidatat magna amet.
-                            Labore culpa ad eu nulla exercitation labore dolor
-                            minim cillum deserunt aliquip est mollit
-                            consectetur. Aute et do pariatur labore. Eiusmod
-                            occaecat nulla voluptate incididunt ea tempor quis
-                            aute exercitation excepteur.
+                           {info}
                           </p>
                         </div>
                       </Tab.Pane>
@@ -175,4 +173,9 @@ const ProductCard = (props) => {
   );
 };
 
-export default connect(null, { addBasket }) (ProductCard);
+const mapStateToProps = (state) => ({
+  basketProps: state.basketState,
+  mobileProps: state.mobileState
+});
+
+export default connect(mapStateToProps, { addBasket, addToCart }) (ProductCard);

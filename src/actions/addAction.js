@@ -1,37 +1,35 @@
-import { ADD_PRODUCT_BASKET,HANDLE_DETAILS,ADD_TO_CART  } from "./types";
+import { ADD_PRODUCT_BASKET, HANDLE_DETAILS, ADD_TO_CART,GET_ITEM } from "./types";
 
 export const addBasket = (productName) => {
   return (dispatch) => {
     console.log("add to basket");
     console.log("Product: ", productName);
-    
+
     dispatch({
       type: ADD_PRODUCT_BASKET,
-      payload: productName
+      payload: productName,
     });
   };
 };
 
-// export const showProductDetails = (productName) => {
-//   return (dispatch) => {
-//     console.log("showing product details");
-//     console.log("ProductDetails= ", productName);
-    
-//     dispatch({
-//       type: HANDLE_DETAILS ,
-//       payload: productName
-//     });
-//   };
-// };
+export const getItem = (id) => {
+  return (dispatch) => {
 
-export const addToCart = (productName) => {
+    dispatch({
+      type: GET_ITEM,
+      payload: id,
+    });
+  };
+};
+
+export const addToCart = (id) => {
   return (dispatch) => {
     console.log("adding to cart");
-    console.log("addToCart= ", productName);
-    
+    console.log("addToCart id is = ", id);
+
     dispatch({
-      type: ADD_TO_CART ,
-      payload: productName
+      type: ADD_TO_CART,
+      payload: id,
     });
   };
 };

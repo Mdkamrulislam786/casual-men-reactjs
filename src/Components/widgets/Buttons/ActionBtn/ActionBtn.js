@@ -7,6 +7,7 @@ const ActionBtn = (props) => {
   return (
     <>
       <Button
+        disabled={props.cta==='IN CART' ? true: false}
         variant="none"
         type="button"
         className="ActionBtn"

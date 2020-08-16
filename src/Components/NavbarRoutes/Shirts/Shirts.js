@@ -31,7 +31,7 @@ class Shirts extends Component {
   };
 
   handleClose = () => {
-    this.setState({ show: false });
+    this.setState({whichComponentToShow: "FeatureCard", show: false });
   };
   handleShow = () => {
     this.setState({ show: true });
