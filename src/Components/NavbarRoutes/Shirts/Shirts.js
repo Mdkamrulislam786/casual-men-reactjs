@@ -126,9 +126,9 @@ class Shirts extends Component {
       />
     ];
    
-    featureCard.map((item,index)=>{
+    // featureCard.map((item,index)=>{
       
-    })
+    // })
     //Which modal to show on <FaetureCard> Click 
     let modalToShow = (modal) => {
       return (

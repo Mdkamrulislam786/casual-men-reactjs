@@ -16,6 +16,8 @@ import Cneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/CircleNeck
 import ProductCard from './Components/widgets/ShoppingCards/ProductCard/ProductCard'
 import Cart from './ShoppingCart/Cart'
 import ProductList from './Components/NavbarRoutes/Mobile/ProductList'
+import ModalButton from './Components/widgets/ModalButton/ModalButton'
+
 class Routes extends Component {
   render() {
     return (
@@ -36,6 +38,7 @@ class Routes extends Component {
           <Route path="/Shopping-Cart" exact component={Cart}/>
           <Route path="/Mobiles" exact component={ProductList}/>
         </Switch>
+        <ModalButton />
       </Layout>
     );
   }

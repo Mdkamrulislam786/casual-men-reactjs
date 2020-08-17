@@ -7,11 +7,14 @@ class ProductProvider extends Component {
   state = {
     products: [],
     detailProduct,
+    cart: [],
+    modalOpen: false,
+    modalProduct: detailProduct
   };
 
   //Copying the storeProduct object, we'll work with this copy not the original storeProduct, so the main data dont gets changed
- componentDidMount(){
-      this.setProducts()
+  componentDidMount() {
+    this.setProducts();
   }
   setProducts = () => {
     let tempProducts = [];
@@ -25,7 +28,7 @@ class ProductProvider extends Component {
   };
 
   getItem = (id) => {
-    const product = this.state.products.find((item) => item.id === id);
+    const product = this.state.products.find((item) => item.id === id); //returns item that meets the condition
     return product;
   };
 
@@ -37,7 +40,40 @@ class ProductProvider extends Component {
   };
 
   addToCart = (id) => {
-    console.log(`ID is ${id}`);
+    let tempProducts = [...this.state.products];
+    const index = tempProducts.indexOf(this.getItem(id));
+    let product = tempProducts[index];
+    product.inCart = true;
+    product.count = 1;
+    const price = product.price;
+    product.total = price;
+
+    this.setState(
+      () => {
+        return {
+          products: tempProducts,
+          cart: [...this.state.cart, product],
+        };
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
+  };
+
+  openModal = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+
+  closeModal = () => {
+    this.setState(() => {
+      return {
+        modalOpen: false,
+      };
+    });
   };
 
   render() {
@@ -47,6 +83,8 @@ class ProductProvider extends Component {
           ...this.state,
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
+          openModal: this.openModal,
+          closeModal: this.closeModal
         }}
       >
         {this.props.children}

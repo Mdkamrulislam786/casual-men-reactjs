@@ -42,9 +42,6 @@ class ProductList extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  mobileProps: state.mobileState,
-});
 export default ProductList;
 
 {
