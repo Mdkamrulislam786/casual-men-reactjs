@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Image } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import FeatureCard from "../../../../widgets/ShoppingCards/FeatureCard/FeatureCard";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";

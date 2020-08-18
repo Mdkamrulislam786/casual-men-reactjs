@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
-import { connect } from "react-redux";
-import getNumbers from "../../../actions/getAction";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   Nav,
@@ -19,12 +17,7 @@ const logo = () => (
   </span>
 );
 
-const CMNavbar = (props) => {
-  console.log(props);
-
-  useEffect(() => {
-    getNumbers();
-  }, []);
+const CMNavbar = () => {
 
   return (
     <div className="CMnavbar">
@@ -79,11 +72,6 @@ const CMNavbar = (props) => {
                 All Collections
               </Nav.Link>
             </Nav.Item>
-            <Nav.Item style={{ textDecoration: "none", color: "black" }}>
-              <Nav.Link as={Link} to="/Mobiles">
-                Mobiles
-              </Nav.Link>
-            </Nav.Item>
             <Nav.Item>
               <Nav.Link>Call Now: +8801826391501</Nav.Link>
             </Nav.Item>
@@ -110,7 +98,7 @@ const CMNavbar = (props) => {
             >
               <span style={{ color: "white" }}>
                 <i className="fas fa-shopping-cart">
-                  <span>0</span>Cart
+                  CART
                 </i>
               </span>
             </Nav.Link>
@@ -135,8 +123,6 @@ const CMNavbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  basketProps: state.basketState,
-});
+
 
 export default CMNavbar;

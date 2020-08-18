@@ -9,7 +9,11 @@ class ProductProvider extends Component {
     detailProduct,
     cart: [],
     modalOpen: false,
-    modalProduct: detailProduct
+    modalProduct: detailProduct,
+    open: true,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0,
   };
 
   //Copying the storeProduct object, we'll work with this copy not the original storeProduct, so the main data dont gets changed
@@ -39,6 +43,22 @@ class ProductProvider extends Component {
     });
   };
 
+  openModal = (id) => {
+    const product = this.getItem(id);
+    this.setState(() => {
+      return { modalProduct: product, modalOpen: true };
+    });
+  };
+
+  closeModal = () => {
+    this.setState(() => {
+      return {
+        modalOpen: false,
+      };
+    });
+  };
+
+  //CART ACTIONS
   addToCart = (id) => {
     let tempProducts = [...this.state.products];
     const index = tempProducts.indexOf(this.getItem(id));
@@ -56,22 +76,103 @@ class ProductProvider extends Component {
         };
       },
       () => {
-        console.log(this.state);
+        this.addTotals();
       }
     );
   };
 
-  openModal = (id) => {
-    const product = this.getItem(id);
-    this.setState(() => {
-      return { modalProduct: product, modalOpen: true };
-    });
+  increment = (id) => {
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+    product.count = product.count + 1;
+    product.total = product.count * product.price;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+        };
+      },
+      () => {
+        this.addTotals();
+      }
+    );
+  };
+  decrement = (id) => {
+    let tempCart = [...this.state.cart];
+    const selectedProduct = tempCart.find((item) => item.id === id);
+    const index = tempCart.indexOf(selectedProduct);
+    const product = tempCart[index];
+    product.count = product.count - 1;
+
+    if (product.count === 0) {
+      this.removeItem(id);
+    } else {
+      product.total = product.count * product.price;
+      this.setState(
+        () => {
+          return {
+            cart: [...tempCart],
+          };
+        },
+        () => {
+          this.addTotals();
+        }
+      );
+    }
   };
 
-  closeModal = () => {
+  removeItem = (id) => {
+    let tempProducts = [...this.state.products];
+    let tempCart = [...this.state.cart];
+    tempCart = tempCart.filter((item) => {
+      return item.id !== id;
+    });
+
+    const index = tempProducts.indexOf(this.getItem(id));
+    let removeProduct = tempProducts[index];
+    removeProduct.inCart = false;
+    removeProduct.count = 0;
+    removeProduct.total = 0;
+
+    this.setState(
+      () => {
+        return {
+          cart: [...tempCart],
+          products: [...tempProducts],
+        };
+      },
+      () => {
+        this.addTotals();
+      }
+    );
+  };
+
+  clearCart = () => {
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        this.setProducts();
+        this.addTotals();
+      }
+    );
+  };
+
+  addTotals = () => {
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const tempTax = subTotal * 0.1;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
     this.setState(() => {
       return {
-        modalOpen: false,
+        cartSubTotal: subTotal,
+        cartTax: tax,
+        cartTotal: total,
       };
     });
   };
@@ -84,7 +185,11 @@ class ProductProvider extends Component {
           handleDetail: this.handleDetail,
           addToCart: this.addToCart,
           openModal: this.openModal,
-          closeModal: this.closeModal
+          closeModal: this.closeModal,
+          increment: this.increment,
+          decrement: this.decrement,
+          removeItem: this.removeItem,
+          clearCart: this.clearCart,
         }}
       >
         {this.props.children}

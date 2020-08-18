@@ -5,7 +5,6 @@ import Layout from './Hoc/Layout/Layout'
 import Home from './Home'
 import Collections from './Components/NavbarRoutes/Collections/Collections'
 import TShirts from './Components/NavbarRoutes/TShirts/TShirts'
-import Shirts from './Components/NavbarRoutes/Shirts/Shirts'
 import Jeans from './Components/NavbarRoutes/Jeans/Jeans'
 import OurPP from './Components/OurPP/OurPP'
 import Polos from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Polos'
@@ -15,8 +14,9 @@ import Vneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/Vneck/Vnec
 import Cneck from './Components/NavbarRoutes/TShirts/AllTshirts/Polos/CircleNeck/Cneck'
 import ProductCard from './Components/widgets/ShoppingCards/ProductCard/ProductCard'
 import Cart from './ShoppingCart/Cart'
-import ProductList from './Components/NavbarRoutes/Mobile/ProductList'
+import ProductList from './Components/NavbarRoutes/Shirt/ProductList'
 import ModalButton from './Components/widgets/ModalButton/ModalButton'
+import Default from './Components/Default/Deafult'
 
 class Routes extends Component {
   render() {
@@ -26,7 +26,7 @@ class Routes extends Component {
           <Route path="/" exact component={Home} />
           <Route path="/T-Shirts" exact component={TShirts} />
           <Route path="/online-shop&all-collections" exact component={Collections} />
-          <Route path="/shirts" exact component={Shirts} />
+          <Route path="/shirts" exact component={ProductList} />
           <Route path="/jeans" exact component={Jeans} />
           <Route path="/Exclusive-Products" exact component={OurPP}/>
           <Route path="/polos" exact component={Polos}/>
@@ -36,7 +36,7 @@ class Routes extends Component {
           <Route path="/Circle-neck" exact component={Cneck}/>
           <Route path="/ProductCard-add-to-cart" exact component={ProductCard}/>
           <Route path="/Shopping-Cart" exact component={Cart}/>
-          <Route path="/Mobiles" exact component={ProductList}/>
+          <Route component={Default}/>
         </Switch>
         <ModalButton />
       </Layout>

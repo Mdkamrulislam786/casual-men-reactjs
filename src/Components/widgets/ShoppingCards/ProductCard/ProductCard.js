@@ -1,18 +1,12 @@
-import React, { Component, useState } from "react";
-import { Container, Row, Col, Image, Tab, Nav } from "react-bootstrap";
+import React, { Component} from "react";
+import { Container, Row, Col, Image, Tab, Nav,Modal } from "react-bootstrap";
 
 //COMPONENTS
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
 import OurPP from "../../../OurPP/OurPP";
 import ActionBtn from "../../Buttons/ActionBtn/ActionBtn";
 import Buttons from "../../Buttons/button";
-import ModalButton from "../../ModalButton/ModalButton";
 import "./ProductCard.css";
-
-//REDUX
-import { addBasket } from "../../../../actions/addAction";
-import { addToCart } from "../../../../actions/addAction";
-import { connect } from "react-redux";
 
 //React Context API
 import { ProductConsumer } from "../../../../context";
@@ -20,9 +14,26 @@ import { ProductConsumer } from "../../../../context";
 import sizechart from "../../../../assets/size-chart.png";
 
 class ProductCard extends Component {
-  render() {
-    // const [modalShow, setModalShow] = React.useState(false);
+  state={
+    open:true
+  }
 
+  ShowSizeChart = ()=>{
+    return(
+      <Modal
+      show={this.state.open}
+      size="sm"
+      >
+        <Modal.Body>
+          <Image src={sizechart} fluid />
+        </Modal.Body>
+      </Modal>
+    )
+  }
+
+  render() {
+    
+    
     console.log(this.props);
 
     return (
@@ -56,6 +67,7 @@ class ProductCard extends Component {
                         Pay with{" "}
                         <img
                           src={payoneer}
+                          alt="product"
                           style={{
                             height: "24px",
                             padding: "0px 2px",
@@ -92,9 +104,9 @@ class ProductCard extends Component {
                         <span>L</span>
                         <span>XL</span>
 
-                        <a href="#" >
+                        <button type="button" varient="info"  onClick={()=> this.ShowSizeChart()}>
                           View size chart
-                        </a>
+                        </button>
                       </p>
                     </div>
 
@@ -191,10 +203,3 @@ class ProductCard extends Component {
 export default ProductCard;
 
 
-//RB MODALS DATA:
-// onClick={() => setModalShow(true)}
-{/* <ModalButton
-image={sizechart}
-show={modalShow}
-onHide={() => setModalShow(false)}
-/> */}

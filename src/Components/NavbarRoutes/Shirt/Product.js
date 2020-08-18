@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import { Col, Card } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "./Product.css";
-import { connect } from "react-redux";
-import handleDetails from "../../../actions/handleDetails";
 import { ProductConsumer } from "../../../context";
 
 class Product extends Component {
@@ -22,7 +20,7 @@ class Product extends Component {
                 onClick={() => value.handleDetail(id)}
               >
                 <Link to="/ProductCard-add-to-cart">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img src={img} alt="product" className="card-img-top" style={{height:'300px', minWidth:'100%'}} />
                 </Link>
                 <button
                   className="cart-btn"

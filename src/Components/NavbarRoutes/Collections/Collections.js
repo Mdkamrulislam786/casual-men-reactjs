@@ -3,7 +3,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import OurPP from "../../OurPP/OurPP";
 import TShirts from "../TShirts/TShirts";
 import "./Collections.css";
-import Shirts from "../Shirts/Shirts";
+import ProductList from "../Shirt/ProductList";
 import Jeans from "../Jeans/Jeans";
 
 const Collections = () => {
@@ -36,7 +36,7 @@ const Collections = () => {
                   <TShirts />
                 </Tab.Pane>
                 <Tab.Pane eventKey="second">
-                  <Shirts />
+                  <ProductList />
                 </Tab.Pane>
                 <Tab.Pane eventKey="third">
                   <Jeans />

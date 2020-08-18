@@ -1,10 +1,7 @@
-import React, { Component, useEffect } from "react";
-import { Container, Row, Col, Image } from "react-bootstrap";
-import { connect } from "react-redux";
-import handleDetails from "../../../actions/handleDetails";
+import React, { Component} from "react";
+import { Container, Row} from "react-bootstrap";
 import Product from "./Product";
 import AllDressHeader from "../../widgets/AllDressHeader/AllDressHeader";
-import { setstate } from "../../../reducers/mobileReducer";
 
 //CPNTCT API
 import { ProductConsumer } from "../../../context";
@@ -43,14 +40,3 @@ class ProductList extends Component {
 }
 
 export default ProductList;
-
-{
-  /* { mobileList.map((items)=>{
-                    return console.log(items);
-                })} 
-                
-                */
-}
-{
-  /* <Image src={shirt} height="250px" width="300px" /> */
-}
