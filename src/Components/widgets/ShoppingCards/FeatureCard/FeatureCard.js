@@ -5,15 +5,17 @@ import "./FeatureCard.css";
 const FeatureCard = (props) => {
   // console.log(props);
   return (
-    <div  onClick={props.onClick} className="FeatureCard">
-      
-      <div style={{textDecoration:'none', color:'#000'}}>
+    <div onClick={props.onClick} className="FeatureCard">
+      <div style={{ textDecoration: "none", color: "#000" }}>
         <Card
           style={{
             width: "17rem",
             paddingLeft: "20px",
             paddingRight: "20px",
             overflow: "hidden",
+            borderColor: "transparent",
+            transition: "all 1s linear",
+            border: "transparent",
           }}
           className="Card"
         >
@@ -26,9 +28,7 @@ const FeatureCard = (props) => {
                 style={{ paddingBottom: "10px" }}
                 className="d-flex flex-row justify-content-between"
               >
-                <p>
-                  {props.title}
-                </p>
+                <p>{props.title}</p>
                 <h6>{props.price}</h6>
               </div>
               <div className="colors-circle">

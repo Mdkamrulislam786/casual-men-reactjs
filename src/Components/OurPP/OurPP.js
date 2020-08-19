@@ -7,7 +7,7 @@ import FeatureCard from "../widgets/ShoppingCards/FeatureCard/FeatureCard";
 import img from "../../assets/T-Shirts/Short-Sleeves/VNSS.jpg";
 import img2 from "../../assets/Jeans/J-unsplash.jpg";
 import img3 from "../../assets/Shirts/ocean-shirt.jpg";
-import img4 from "../../assets/Shirts/L-unsplash.jpg";
+import img4 from  '../../assets/Shirts/L-unsplash.jpg';
 import img5 from "../../assets/Jeans/SDenim.jpg";
 
 class OurPP extends Component {

@@ -107,14 +107,14 @@ const CMNavbar = () => {
       </Navbar>
       <div className="nd-nav">
         <Carousel indicators={false}>
-          <Carousel.Item>
+        <Carousel.Item>
             <p className="navp text-center m-0 pt-1 pb-1">
-              Free Deliveryfor 50$ orders
+              You can only order from <Link to="/shirts">Shirts</Link> NOW!
             </p>
           </Carousel.Item>
           <Carousel.Item>
             <p className="navp text-center m-0 pt-1 pb-1">
-              20% off on T-Shirts
+              20% off on <Link to="/shirts">Shirts</Link>
             </p>
           </Carousel.Item>
         </Carousel>

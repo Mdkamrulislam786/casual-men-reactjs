@@ -1,5 +1,5 @@
-import React, { Component} from "react";
-import { Container, Row, Col, Image, Tab, Nav,Modal } from "react-bootstrap";
+import React, { Component } from "react";
+import { Container, Row, Col, Image, Tab, Nav, Modal } from "react-bootstrap";
 
 //COMPONENTS
 import payoneer from "../../../../assets/Payoneer_logo.svg.png";
@@ -14,28 +14,20 @@ import { ProductConsumer } from "../../../../context";
 import sizechart from "../../../../assets/size-chart.png";
 
 class ProductCard extends Component {
-  state={
-    open:true
-  }
+  state = {
+    show: false,
+    setShow: false,
+  };
 
-  ShowSizeChart = ()=>{
-    return(
-      <Modal
-      show={this.state.open}
-      size="sm"
-      >
-        <Modal.Body>
-          <Image src={sizechart} fluid />
-        </Modal.Body>
-      </Modal>
-    )
-  }
-
+  handleClose = () => {
+    this.setState(() => {
+      return {
+        show: false,
+        setShow: false,
+      };
+    });
+  };
   render() {
-    
-    
-    console.log(this.props);
-
     return (
       <ProductConsumer>
         {(value) => {
@@ -47,18 +39,15 @@ class ProductCard extends Component {
             >
               <Container>
                 <Row>
-                  <Col className="d-flex justify-content-center text-center align-center">
-                    <Image
-                      src={img}
-                      style={{
-                        height: "625px",
-                        width: "425px",
-                        margin: "5px",
-                        cursor: "zoom-in",
-                      }}
-                    />
+                  <Col
+                    xs={12}
+                    md={6}
+                    xl={6}
+                    className="d-flex justify-content-center text-center align-center"
+                  >
+                    <Image src={img} className="product-img" fluid />
                   </Col>
-                  <Col>
+                  <Col xs={12} md={6} xl={6}>
                     <div>
                       <h3>{title}</h3>
                       <b>Price:</b>
@@ -103,11 +92,42 @@ class ProductCard extends Component {
                         <span>M</span>
                         <span>L</span>
                         <span>XL</span>
-
-                        <button type="button" varient="info"  onClick={()=> this.ShowSizeChart()}>
+                        <a
+                          type="button"
+                          varient="info"
+                          onClick={() =>
+                            this.setState(() => {
+                              return {
+                                show: true,
+                                setShow: true,
+                              };
+                            })
+                          }
+                        >
                           View size chart
-                        </button>
+                        </a>
                       </p>
+                      <Modal
+                        show={this.state.show}
+                        onHide={() => this.state.setShow}
+                        size="sm"
+                        centered
+                      >
+                        <Modal.Header>
+                          <Modal.Title>
+                            <h5>Size Chart</h5>
+                          </Modal.Title>
+                          <div
+                            style={{ cursor: "pointer" }}
+                            onClick={() => this.handleClose()}
+                          >
+                            <i className="fas fa-times-circle"></i>
+                          </div>
+                        </Modal.Header>
+                        <Modal.Body>
+                          <Image src={sizechart} fluid />
+                        </Modal.Body>
+                      </Modal>
                     </div>
 
                     {/* ADDTOCART-BUTTON */}
@@ -119,7 +139,7 @@ class ProductCard extends Component {
                         }}
                         // onClick={() => props.addBasket(props.add)}
                       />
-                      <Buttons linkTo="Mobiles" cta="Back To Products" />
+                      <Buttons linkTo="/shirts" cta="Back To Products" />
                     </div>
 
                     <div style={{ color: "black", margin: "10px 0px" }}>
@@ -172,24 +192,25 @@ class ProductCard extends Component {
                   </Col>
                 </Row>
                 <Row>
-                  <div
-                    style={{
-                      margin: "2rem 0px",
-                      textAlign: "center",
-                    }}
-                  >
-                    <h3
+                  <Col xs={12} md={12} xl={12}>
+                    <div
                       style={{
-                        fontSize: "2rem",
-                        textTransform: "uppercase",
-                        marginBottom: "2rem",
+                        margin: "2rem 0px",
+                        textAlign: "center",
                       }}
                     >
-                      Related Products
-                    </h3>
-                    <OurPP />
-                  </div>
-             
+                      <h3
+                        style={{
+                          fontSize: "2rem",
+                          textTransform: "uppercase",
+                          marginBottom: "2rem",
+                        }}
+                      >
+                        Related Products
+                      </h3>
+                      <OurPP />
+                    </div>
+                  </Col>
                 </Row>
               </Container>
             </div>
@@ -201,5 +222,3 @@ class ProductCard extends Component {
 }
 
 export default ProductCard;
-
-

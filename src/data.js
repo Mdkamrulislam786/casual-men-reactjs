@@ -25,7 +25,7 @@ export const storeProducts = [
   },
   {
     id: 3,
-    title: "Official/Formal",
+    title: "Official Formal",
     img: "img/product-3 .png",
     price: 8,
     company: "htc",
