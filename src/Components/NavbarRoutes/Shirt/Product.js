@@ -9,7 +9,7 @@ class Product extends Component {
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
-      <Col xs={6} lg={3} xl={3} md={3} className="mx-auto my-3">
+      <Col xs={6} lg={3} xl={3} md={3} className=" my-3">
         <Card
           style={{ borderColor: "transparent", transition: "all 1s linear" }}
         >

@@ -22,7 +22,9 @@ class ProductList extends Component {
           <Row>
             <ProductConsumer>
               {(value) => {
-                return value.products.map((product) => {
+                let size = 8;
+                let first8Items = value.products.slice(0,size);
+                return first8Items.map((product) => {
                   return (
                     <Product
                       key={product.id}

@@ -18,7 +18,6 @@ const logo = () => (
 );
 
 const CMNavbar = () => {
-
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="xl" variant="dark">
@@ -97,9 +96,7 @@ const CMNavbar = () => {
               eventKey={2}
             >
               <span style={{ color: "white" }}>
-                <i className="fas fa-shopping-cart">
-                  CART
-                </i>
+                <i className="fas fa-shopping-cart">CART</i>
               </span>
             </Nav.Link>
           </Form>
@@ -107,14 +104,16 @@ const CMNavbar = () => {
       </Navbar>
       <div className="nd-nav">
         <Carousel indicators={false}>
-        <Carousel.Item>
+          <Carousel.Item>
             <p className="navp text-center m-0 pt-1 pb-1">
-              You can only order from <Link to="/shirts">Shirts</Link> NOW!
+              You can only order from <Link to="/shirts">Shirts</Link> &{" "}
+              <Link to="/jeans">Jeans</Link> NOW!
             </p>
           </Carousel.Item>
           <Carousel.Item>
             <p className="navp text-center m-0 pt-1 pb-1">
-              20% off on <Link to="/shirts">Shirts</Link>
+              20% off on <Link to="/shirts">Shirts</Link> &{" "}
+              <Link to="/jeans">Jeans</Link>
             </p>
           </Carousel.Item>
         </Carousel>
@@ -122,7 +121,5 @@ const CMNavbar = () => {
     </div>
   );
 };
-
-
 
 export default CMNavbar;

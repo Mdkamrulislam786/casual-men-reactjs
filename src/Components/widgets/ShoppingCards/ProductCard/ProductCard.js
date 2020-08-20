@@ -92,7 +92,7 @@ class ProductCard extends Component {
                         <span>M</span>
                         <span>L</span>
                         <span>XL</span>
-                        <a
+                        <button
                           type="button"
                           varient="info"
                           onClick={() =>
@@ -105,7 +105,7 @@ class ProductCard extends Component {
                           }
                         >
                           View size chart
-                        </a>
+                        </button>
                       </p>
                       <Modal
                         show={this.state.show}

@@ -9,7 +9,7 @@ class ModalButton extends Component {
       <ProductConsumer>
         {(value) => {
           const { modalOpen, closeModal } = value;
-          const { img, title, price } = value.modalProduct;
+          const {id, img, title, price } = value.modalProduct;
 
           if (!modalOpen) {
             return null;
@@ -36,7 +36,7 @@ class ModalButton extends Component {
                       onClick={() => closeModal()}
                       className="text-center align-center"
                     >
-                      <Buttons linkTo="Mobiles" cta="Continue Shopping" />
+                      <Buttons linkTo={id <= 13 ? "shirts" : "jeans"}  cta="Continue Shopping" />
                     </div>
                     <div
                       onClick={() => closeModal()}

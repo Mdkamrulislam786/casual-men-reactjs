@@ -76,4 +76,25 @@
     .small-img {
         height: 200px;
     }
+    .img-container {
+        padding: 1rem !important;
+    }
+
+    .card {
+        width: 10rem !important;
+        padding: 1rem !important;
+    }
+}
+@media (min-width:1025px){
+    .small-img {
+        height: 300px;
+    }
+    .img-container {
+        padding: 1rem !important;
+    }
+
+    .card {
+        width: 15rem !important;
+        padding: 1rem !important;
+    }
 }
