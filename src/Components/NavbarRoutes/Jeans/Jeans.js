@@ -59,7 +59,7 @@ class Jeans extends Component {
     };
 
     return (
-      <Container fluid>
+      <Container>
       <ProductConsumer>
         {value=>{
 

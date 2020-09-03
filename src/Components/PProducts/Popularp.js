@@ -2,12 +2,18 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./popularp.css";
 import Buttons from "../widgets/Buttons/button";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Popularp = () => {
   return (
     <div>
-      <div className="popularp">
+      <motion.div
+        initial={{ opacity: 0.5, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ ease: "easeIn", duration: 1 }}
+        className="popularp"
+      >
         <Container fluid>
           <Row>
             <Col>
@@ -40,7 +46,13 @@ const Popularp = () => {
             </Col>
           </Row>
           <div className="middle">
-            <Button size="lg" as={Link} to="/online-shop&all-collections" className="middle-btn" variant="danger">
+            <Button
+              size="lg"
+              as={Link}
+              to="/online-shop&all-collections"
+              className="middle-btn"
+              variant="danger"
+            >
               EXPLORE NOW
             </Button>
           </div>
@@ -78,7 +90,7 @@ const Popularp = () => {
             </Col>
           </Row>
         </Container>
-      </div>
+      </motion.div>
     </div>
   );
 };

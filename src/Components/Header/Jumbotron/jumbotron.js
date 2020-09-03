@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Jumbotron, Carousel } from "react-bootstrap";
 import "./jumbotron.css";
 import Buttons from "../../widgets/Buttons/button";
+import { motion } from "framer-motion";
 
 class CMJumbotron extends Component {
   render() {
@@ -9,8 +10,13 @@ class CMJumbotron extends Component {
       <header>
         <Carousel interval={5000}>
           <Carousel.Item>
-            <div className="jumboImg1 jumbo d-flex flex-column justify-content-center text-center">
-            <div id="overlay"></div>
+            <motion.div
+              initial={{ opacity: 0.5, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ease: "easeIn", duration: 1 }}
+              className="jumboImg1 jumbo d-flex flex-column justify-content-center text-center"
+            >
+              <div id="overlay"></div>
               <Jumbotron fluid>
                 <h1>COMFORT COLLECTION</h1>
                 <p>
@@ -27,7 +33,7 @@ class CMJumbotron extends Component {
                   />
                 </p>
               </Jumbotron>
-            </div>
+            </motion.div>
           </Carousel.Item>
           <Carousel.Item>
             <div className="jumboImg2 jumbo d-flex flex-column justify-content-center text-center">
