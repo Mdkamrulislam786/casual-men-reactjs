@@ -1,0 +1,11 @@
+.searchResults {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 880px;
+    margin: 2rem;
+}
+
+ul {
+    list-style-type: none;
+}

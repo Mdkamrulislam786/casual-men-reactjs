@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import {
   Nav,
   Navbar,
@@ -18,6 +19,10 @@ const logo = () => (
 );
 
 const CMNavbar = () => {
+  let history = useHistory();
+  const handleSubmit = () => {
+    return history.push("/Products");
+  };
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="xl" variant="dark">
@@ -83,23 +88,17 @@ const CMNavbar = () => {
               placeholder="Search"
               className="mr-xs-2 p-2"
             />
-            <Button variant="secondary" type="submit">
+            <Button variant="secondary" type="submit" onClick={handleSubmit}>
               <span style={{ color: "Tomato" }}>
                 <i className="fas fa-search"></i>
               </span>
             </Button>
-
-            <Nav.Link
-              as={Link}
-              to="/Shopping-Cart"
-              className="p-2"
-              eventKey={2}
-            >
-              <span style={{ color: "white" }}>
-                <i className="fas fa-shopping-cart">CART</i>
-              </span>
-            </Nav.Link>
           </Form>
+          <Nav.Link as={Link} to="/Shopping-Cart" className="p-2" eventKey={2}>
+            <span style={{ color: "white" }}>
+              <i className="fas fa-shopping-cart">CART</i>
+            </span>
+          </Nav.Link>
         </Nav>
       </Navbar>
       <div className="nd-nav">
