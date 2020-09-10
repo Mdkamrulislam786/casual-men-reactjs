@@ -67,15 +67,22 @@
     }
 
     .card {
-        width: 8rem !important;
+        width: 10rem !important;
         padding: 1rem !important;
     }
 
+    .product-img {
+        height: auto;
+    }
+
+
 }
-@media (min-width:481px) and (max-width: 1024px){
+
+@media (min-width:481px) and (max-width: 1024px) {
     .small-img {
         height: 200px;
     }
+
     .img-container {
         padding: 1rem !important;
     }
@@ -85,10 +92,12 @@
         padding: 1rem !important;
     }
 }
-@media (min-width:1025px){
+
+@media (min-width:1025px) {
     .small-img {
         height: 300px;
     }
+
     .img-container {
         padding: 1rem !important;
     }

@@ -1,10 +1,10 @@
 .jumbotron {
     background-color: inherit !important;
     padding: 0 !important;
-    
+
 }
 
-.jumbo{
+.jumbo {
     background-size: cover;
     background-clip: content-box;
     background-repeat: no-repeat;
@@ -12,14 +12,18 @@
     z-index: 3;
     box-sizing: border-box;
     max-width: 100%;
-    height:86vh;
-   
+    height: 90vh;
+
 }
-.jumboImg1{
-background-image: url(../../../assets/casual-accessories.jpg);
+
+.jumboImg1 {
+    background-image: url(../../../assets/casual-accessories.jpg);
+    object-fit: contain;
 }
-.jumboImg2{
+
+.jumboImg2 {
     background-image: url(../../../assets/fashion-likbez-how-to-create-various-effects-on-the-jeans-1.jpg);
+    object-fit: contain;
 }
 
 .jumbo h1 {
@@ -33,7 +37,7 @@ background-image: url(../../../assets/casual-accessories.jpg);
     font-size: 24px;
     font-weight: 400;
     color: #ffffff;
-    
+
 }
 
 #overlay {
@@ -61,6 +65,7 @@ background-image: url(../../../assets/casual-accessories.jpg);
         color: #ffffff;
     }
 }
+
 @media (min-width:768px)and (max-width:1024px) {
     .jumbo h1 {
         font-size: 3rem;

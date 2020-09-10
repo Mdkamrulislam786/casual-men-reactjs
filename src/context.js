@@ -7,6 +7,7 @@ class ProductProvider extends Component {
     products: [],
     detailProduct,
     cart: [],
+    basketNumbers: 0,
     modalOpen: false,
     modalProduct: detailProduct,
     open: true,
@@ -72,12 +73,17 @@ class ProductProvider extends Component {
         return {
           products: tempProducts,
           cart: [...this.state.cart, product],
+          basketNumbers: this.state.basketNumbers + 1,
         };
       },
       () => {
         this.addTotals();
       }
     );
+  };
+
+  getNumbers = () => {
+    return { ...this.state };
   };
 
   increment = (id) => {
@@ -92,6 +98,7 @@ class ProductProvider extends Component {
       () => {
         return {
           cart: [...tempCart],
+          basketNumbers: this.state.basketNumbers + 1,
         };
       },
       () => {
@@ -114,6 +121,7 @@ class ProductProvider extends Component {
         () => {
           return {
             cart: [...tempCart],
+            basketNumbers: this.state.basketNumbers - 1,
           };
         },
         () => {
@@ -132,13 +140,15 @@ class ProductProvider extends Component {
 
     const index = tempProducts.indexOf(this.getItem(id));
     let removeProduct = tempProducts[index];
-    removeProduct.inCart = false;
+    let backupNumbers = removeProduct.count;
     removeProduct.count = 0;
     removeProduct.total = 0;
+    removeProduct.inCart = false;
 
     this.setState(
       () => {
         return {
+          basketNumbers: this.state.basketNumbers - backupNumbers,
           cart: [...tempCart],
           products: [...tempProducts],
         };
@@ -152,7 +162,7 @@ class ProductProvider extends Component {
   clearCart = () => {
     this.setState(
       () => {
-        return { cart: [] };
+        return { cart: [], basketNumbers: 0 };
       },
       () => {
         this.setProducts();

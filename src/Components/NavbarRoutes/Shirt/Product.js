@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Col, Card,Image } from "react-bootstrap";
+import { Col, Card, Image } from "react-bootstrap";
 import PropTypes from "prop-types";
 import "./Product.css";
 import { ProductConsumer } from "../../../context";
 
 class Product extends Component {
+ 
   render() {
     const { id, title, img, price, inCart } = this.props.product;
     return (
@@ -51,7 +52,13 @@ class Product extends Component {
             style={{ background: "transparent", borderTop: "transparent" }}
           >
             <p className="align-self-center mb-0">{title}</p>
-            <h5 style={{ color: "rgb(25, 106, 228)", font: "italic", marginBottom: "0px" }}>
+            <h5
+              style={{
+                color: "rgb(25, 106, 228)",
+                font: "italic",
+                marginBottom: "0px",
+              }}
+            >
               <span style={{ marginRight: "1px" }}>$</span>
               {price}
             </h5>

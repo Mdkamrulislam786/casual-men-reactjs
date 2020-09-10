@@ -11,6 +11,7 @@ import {
   Carousel,
 } from "react-bootstrap";
 import "./navbar.css";
+import { ProductConsumer } from "../../../context";
 
 const logo = () => (
   <span style={{ fontSize: "24px", color: "#fff" }}>
@@ -19,6 +20,8 @@ const logo = () => (
 );
 
 const CMNavbar = () => {
+
+
   let history = useHistory();
   const handleSubmit = () => {
     return history.push("/Products");
@@ -94,11 +97,21 @@ const CMNavbar = () => {
               </span>
             </Button>
           </Form>
-          <Nav.Link as={Link} to="/Shopping-Cart" className="p-2" eventKey={2}>
-            <span style={{ color: "white" }}>
-              <i className="fas fa-shopping-cart">CART</i>
-            </span>
-          </Nav.Link>
+          <ProductConsumer>
+            {(value) => (
+              <Nav.Link
+                as={Link}
+                to="/Shopping-Cart"
+                className="p-2"
+                eventKey={2}
+              >
+                <span style={{ color: "white" }}>
+                  <span>{value.basketNumbers}</span>{" "}
+                  <i className="fas fa-shopping-cart">CART</i>
+                </span>
+              </Nav.Link>
+            )}
+          </ProductConsumer>
         </Nav>
       </Navbar>
       <div className="nd-nav">
