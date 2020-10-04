@@ -20,12 +20,11 @@ const logo = () => (
 );
 
 const CMNavbar = () => {
-
-
-  let history = useHistory();
-  const handleSubmit = () => {
-    return history.push("/Products");
-  };
+  const history = useHistory();
+  function handleSubmit(event) {
+    event.preventDefault();
+    history.push("/Products");
+  }
   return (
     <div className="CMnavbar">
       <Navbar collapseOnSelect expand="xl" variant="dark">
